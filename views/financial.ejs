@@ -1,0 +1,171 @@
+<%- include('./includes/head.ejs') %>
+
+<body>
+
+    <header class="header">
+		<div class="header-inner">
+			<div class="container-fluid">
+				<nav class="navbar bg-light fixed-top">
+				<div class="container-fluid mb-1 justify-content-center display-6">
+					<b>Financial</b>
+				</div>
+			</nav>
+			</div>
+		</div>
+	</header>
+
+    <section>
+		<div class="container">
+			<div class="row justify-content-center position-relative top-0 start-0 p-2" 
+			style="height: 100px; margin-top: 70px; border-radius: 10px; background-image: linear-gradient(to right, #a17ce1, #2196f3);">
+			<div class="row" style="margin-bottom: 10px; color: white;">
+				<div class="col-xxl text-center">
+                    <%= x.title %>
+                </div>
+                <div class="col-6 text-center">
+                    <%= f %>%
+                </div>
+                <div class="col-6 text-center">
+                    <%= x.daily_rate %>%
+                </div>
+			</div>
+		</div>
+		</div>
+	</section>
+
+    <section>
+        <div class="container" id="products">
+            <div class="row justify-content-center" style="margin-top: -10px; padding-top: 20px;">
+                <div class="col-xxl">
+                    <h3>Product Term</h3>
+                </div>
+                <div class="col-xxl">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td style="color: blue;">Buy</td>
+                                <td class="text-end">Expired time</td>
+                            </tr>
+                            <tr>
+                                <td><%= newDate3 %></td>
+                                <td class="text-end"><%= newDate2 %></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-xxl">
+                    <h3>Product rules</h3>
+                    <h4>Buy</h4>
+                    <p>Min invest: $<%= x.min_invest %></p>
+                    <h4>Locking period</h4>
+                    <p>Can't withdrawal during the product cycle, the income are automatically returned to the wallet.</p>
+                    <h4>Information</h4>
+                    <p>Active products: <%= active %></p> 
+                </div>
+                <div class="col-3 text-center">
+                    <img src=<%= x.image_url %> class="img-fluid" width="40px">
+                </div>
+                <div class="col-4 text-center p-2" style="background-color: lightblue; color: darkblue; font-size: 20px;">
+                    $<%= x.min_invest %>
+                </div>
+                <div class="col-4 text-center p-2" style="background-color: purple;  margin-right: 10px;">
+                    <a href="<%= set == true ? 'javascript:void(0)' : '#'%>" class="btn bbb" style="text-decoration: none; color: white">Buy</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container-sm bg-light show" style="height: 200px; position: absolute; top: 50%; padding: 10px; border-radius: 20px; visibility: hidden; box-shadow: 21px 24px 394px 167px dimgray;">
+            <div class="row justify-content-center">
+                <div class="col-2"></div>
+                <div class="col-sm">
+                    <h3>Buy Product</h3>
+                    <p>Are you confirm to buy this product?</p>
+                    
+                    Product Name: <%= x.title %><br>
+                    Daily rate: <%= x.daily_rate %><br>
+                    Duration: <%= x.duration %>days
+                </div>
+                <div class="col-2"></div>
+                <div class="col-xxl text-end" style="display: flex; justify-content:end; align-items:center">
+                    <button type="button" class="btn close border-0" style="color: purple; text-transform: uppercase; font-weight: bold;font-size: 12px;">Close</button>
+                    <a href="/user/confirm/<%= x.p_id %>" style="cursor: pointer; text-decoration: none; color: purple; text-transform: uppercase; font-weight: bold; font-size: 12px;">Yes confirm</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+		<div class="container" style="height: 100px;"></div>
+	</section>
+
+	<footer>
+		<div class="container-fluid">
+			<nav class="navbar fixed-bottom bg-light">
+					<div class="container-xxl mb-1">
+						<a class="nav-link active" aria-current="page" href="/user/home">
+							<img src="https://i.ibb.co/5h726fL/4.png" class="img-fluid" width="45px">
+						</a>
+						<a class="nav-link" href="/user/finance">
+							<img src="https://i.ibb.co/Pt063W9/financec.png" class="img-fluid" width="45px">
+						</a>
+						<a class="nav-link" href="/user/vip">
+							<img src="https://i.ibb.co/YWK3Vw6/vip.png" class="img-fluid" width="45px">
+						</a>
+						<a class="nav-link" href="/user/team">
+							<img src="https://i.ibb.co/Mf2gby4/team.png" class="img-fluid" width="45px">
+						</a>
+						<a class="nav-link"href="/user/account">
+							<img src="https://i.ibb.co/SNvqW7t/7.png" class="img-fluid" width="45px">
+						</a>
+					</div>
+				</nav>
+		</div>
+	</footer>
+
+    <script type="text/javascript">
+        let set = "<%= set%>";
+        let l = "<%= l.main_balance %>";
+        let y = "<%= x.min_invest %>";
+    </script>
+    <script>
+        const btn = globalThis.document.querySelector('.bbb');
+        const show = globalThis.document.querySelector('.show');
+        const close = globalThis.document.querySelector('.close');
+
+        let bal = parseInt(l);
+        let minInvest = parseInt(y);
+
+        // console.log(set, btn, bal, minInvest);
+        btn.addEventListener('click', () => {
+            // console.log(btn.getAttribute('href'), bal, minInvest, set);
+            if(btn.getAttribute('href') == '#') {
+                btn.parentElement.style.backgroundColor = 'darkblue';
+                if(bal >= minInvest) {
+                    show.style.visibility = 'visible';
+                }
+                else {
+                    show.style.visibility = 'visible';
+                    show.innerHTML = `
+                        <h2>Insufficient Balance</h2>
+                        <button type="button" class="btn close border-0" style="color: purple; text-transform: uppercase; font-weight: bold;font-size: 12px;" onclick="myFunction()">Close</button>
+                    `;
+                }
+            }
+            else {
+                btn.parentElement.style.backgroundColor = 'dimgray';
+            }
+        })
+
+        close.addEventListener('click', () => {
+            show.style.visibility = 'hidden';
+        })
+
+        function myFunction() {
+            show.style.visibility = 'hidden';
+        }
+
+    </script>
+    
+<%- include('./includes/end.ejs') %>

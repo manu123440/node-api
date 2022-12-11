@@ -1,0 +1,457 @@
+<%- include('./includes/head.ejs') %>
+
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="container-fluid">
+        <nav class="navbar bg-light fixed-top">
+          <div class="container-fluid mb-1 justify-content-center display-6">
+            <b>Register</b>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="container mb-5">
+      <div
+        class="row justify-content-center"
+        style="height: 200px; margin-top: 60px"
+      >
+        <div class="col-xxl text-center">
+          <img
+            src="https://i.ibb.co/DVR5rLp/home-title1.jpg"
+            class="img-fluid"
+            width="260px"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container mb-1">
+      <div class="row justify-content-center">
+        <div class="col-xxl text-center">
+          <form action="/user/register" method="POST">
+
+            <div class="input-group mb-1">
+              <span class="input-group-text bg-transparent border-0">
+                <img
+                  src="https://i.ibb.co/d0BS348/world.png"
+                  class="img-fluid"
+                  width="40px"
+                />
+              </span>
+              <!-- All countries -->
+              <select id="country" name="country" class="form-select border-0" required>
+                <option value="Afghanistan">Afghanistan +93</option>
+                <option value="Aland Islands">Aland Islands +358</option>
+                <option value="Albania">Albania +355</option>
+                <option value="Algeria">Algeria +213</option>
+                <option value="American Samoa">American Samoa +1684</option>
+                <option value="Andorra">Andorra +376</option>
+                <option value="Angola">Angola +244</option>
+                <option value="Anguilla">Anguilla +1264</option>
+                <option value="Antarctica">Antarctica +672</option>
+                <option value="Antigua and Barbuda">Antigua and Barbuda +1268</option>
+                <option value="Argentina">Argentina +54</option>
+                <option value="Armenia">Armenia +374</option>
+                <option value="Aruba">Aruba +297</option>
+                <option value="Australia">Australia +61</option>
+                <option value="Austria">Austria +43</option>
+                <option value="Azerbaijan">Azerbaijan +994</option>
+                <option value="Bahamas">Bahamas +1242</option>
+                <option value="Bahrain">Bahrain +973</option>
+                <option value="Bangladesh">Bangladesh +880</option>
+                <option value="Barbados">Barbados +1246</option>
+                <option value="Belarus">Belarus +375</option>
+                <option value="Belgium">Belgium +32</option>
+                <option value="Belize">Belize +501</option>
+                <option value="Benin">Benin +229</option>
+                <option value="Bermuda">Bermuda +1441</option>
+                <option value="Bhutan">Bhutan +975</option>
+                <option value="Bolivia">Bolivia +591</option>
+                <option value="Bonaire, Sint Eustatius and Saba">
+                  Bonaire, Sint Eustatius and Saba +599
+                </option>
+                <option value="Bosnia and Herzegovina">Bosnia and Herzegovina +387</option>
+                <option value="Botswana">Botswana +267</option>
+                <option value="Bouvet Island">Bouvet Island +55</option>
+                <option value="Brazil">Brazil +55</option>
+                <option value="British Indian Ocean Territory">British Indian Ocean Territory +246</option>
+                <option value="Brunei Darussalam">Brunei Darussalam +673</option>
+                <option value="Bulgaria">Bulgaria +359</option>
+                <option value="Burkina Faso">Burkina Faso +226</option>
+                <option value="Burund">Burundi +257</option>
+                <option value="Cambodia">Cambodia +855</option>
+                <option value="Cameroon">Cameroon +237</option>
+                <option value="Canada">Canada +1</option>
+                <option value="Cape Verde">Cape Verde +238</option>
+                <option value="Cayman Islands">Cayman Islands +1345</option>
+                <option value="Central African Republic">Central African Republic +236</option>
+                <option value="Chad">Chad +235</option>
+                <option value="Chile">Chile +56</option>
+                <option value="China">China +86</option>
+                <option value="Christmas Island">Christmas Island +61</option>
+                <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands +672</option>
+                <option value="Colombia">Colombia +57</option>
+                <option value="Comoros">Comoros +269</option>
+                <option value="Congo">Congo +242</option>
+                <option value="Congo, Democratic Republic of the Congo">
+                  Congo, Democratic Republic of the Congo +242
+                </option>
+                <option value="Cook Islands">Cook Islands +682</option>
+                <option value="Costa Rica">Costa Rica +506</option>
+                <option value="Cote D'Ivoire">Cote D'Ivoire +225</option>
+                <option value="Croatia">Croatia +385</option>
+                <option value="Cuba">Cuba +53</option>
+                <option value="Curacao">Curacao +599</option>
+                <option value="Cyprus">Cyprus +357</option>
+                <option value="Czech Republic">Czech Republic +420</option>
+                <option value="Denmark">Denmark +45</option>
+                <option value="Djibouti">Djibouti +253</option>
+                <option value="Dominica">Dominica +1767</option>
+                <option value="Dominican Republic">Dominican Republic +1809</option>
+                <option value="Ecuador">Ecuador +593</option>
+                <option value="Egypt">Egypt +20</option>
+                <option value="El Salvado">El Salvador +503</option>
+                <option value="Equatorial Guinea">Equatorial Guinea +240</option>
+                <option value="Eritrea">Eritrea +291</option>
+                <option value="Estonia">Estonia +372</option>
+                <option value="Ethiopia">Ethiopia +251</option>
+                <option value="Falkland Islands (Malvinas">Falkland Islands (Malvinas) +500</option>
+                <option value="Faroe Islands">Faroe Islands +298</option>
+                <option value="Fiji">Fiji +679</option>
+                <option value="Finland">Finland +358</option>
+                <option value="France">France +33</option>
+                <option value="French Guiana">French Guiana +594</option>
+                <option value="French Polynesia">French Polynesia +689</option>
+                <option value="French Southern Territories">French Southern Territories +262</option>
+                <option value="Gabon">Gabon +241</option>
+                <option value="Gambia">Gambia +220</option>
+                <option value="Georgia">Georgia +995</option>
+                <option value="Germany">Germany +49</option>
+                <option value="Ghana">Ghana +233</option>
+                <option value="Gibraltar">Gibraltar +350</option>
+                <option value="Greece">Greece +30</option>
+                <option value="Greenland">Greenland +299</option>
+                <option value="Grenada">Grenada +1473</option>
+                <option value="Guadeloupe">Guadeloupe +590</option>
+                <option value="Guam">Guam +1671</option>
+                <option value="Guatemala">Guatemala +502</option>
+                <option value="Guernsey">Guernsey +44</option>
+                <option value="Guinea">Guinea +224</option>
+                <option value="Guinea-Bissau">Guinea-Bissau +245</option>
+                <option value="Guyana">Guyana +592</option>
+                <option value="Haiti">Haiti +509</option>
+                <option value="Heard Island and Mcdonald Islands">Heard Island and Mcdonald Islands +0</option>
+                <option value="Holy See (Vatican City State)">Holy See (Vatican City State) +39</option>
+                <option value="Honduras">Honduras +504</option>
+                <option value="Hong Kong">Hong Kong +852</option>
+                <option value="Hungary">Hungary +36</option>
+                <option value="Iceland">Iceland +354</option>
+                <option value="India">India +91</option>
+                <option value="Indonesia">Indonesia +62</option>
+                <option value="Iran, Islamic Republic of">Iran, Islamic Republic of +98</option>
+                <option value="Iraq">Iraq +964</option>
+                <option value="Ireland">Ireland +353</option>
+                <option value="Isle of Man">Isle of Man +44</option>
+                <option value="Israel">Israel +972</option>
+                <option value="Italy">Italy +39</option>
+                <option value="Jamaica">Jamaica +1876</option>
+                <option value="Japan">Japan +81</option>
+                <option value="Jersey">Jersey +44</option>
+                <option value="Jordan">Jordan +962</option>
+                <option value="Kazakhstan">Kazakhstan +7</option>
+                <option value="Kenya">Kenya +254</option>
+                <option value="Kiribati">Kiribati +686</option>
+                <option value="Korea, Democratic People's Republic of">
+                  Korea, Democratic People's Republic of +850
+                </option>
+                <option value="Korea, Republic of">Korea, Republic of +82</option>
+                <option value="Kosovo">Kosovo +381</option>
+                <option value="Kuwait">Kuwait +965</option>
+                <option value="Kyrgyzstan">Kyrgyzstan +996</option>
+                <option value="Lao People's Democratic Republic">
+                  Lao People's Democratic Republic +856
+                </option>
+                <option value="Latvia">Latvia +371</option>
+                <option value="Lebanon">Lebanon +961</option>
+                <option value="Lesotho">Lesotho +266</option>
+                <option value="Liberia">Liberia +231</option>
+                <option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya +218</option>
+                <option value="Liechtenstein">Liechtenstein +423</option>
+                <option value="Lithuania">Lithuania +370</option>
+                <option value="Luxembourg">Luxembourg +352</option>
+                <option value="Macao">Macao +853</option>
+                <option value="Macedonia, the Former Yugoslav Republic of">
+                  Macedonia, the Former Yugoslav Republic of +389
+                </option>
+                <option value="Madagascar">Madagascar +261</option>
+                <option value="Malawi">Malawi +265</option>
+                <option value="Malaysia">Malaysia +60</option>
+                <option value="Maldives">Maldives +960</option>
+                <option value="Mali">Mali +223</option>
+                <option value="Malta">Malta +356</option>
+                <option value="Marshall Islands">Marshall Islands +692</option>
+                <option value="Martinique">Martinique +596</option>
+                <option value="Mauritania">Mauritania +222</option>
+                <option value="Mauritius">Mauritius +230</option>
+                <option value="Mayotte">Mayotte +262</option>
+                <option value="Mexico">Mexico +52</option>
+                <option value="Micronesia, Federated States of">
+                  Micronesia, Federated States of +691
+                </option>
+                <option value="Moldova, Republic of">Moldova, Republic of +373</option>
+                <option value="Monaco">Monaco +377</option>
+                <option value="Mongolia">Mongolia +976</option>
+                <option value="Montenegro">Montenegro +382</option>
+                <option value="Montserrat">Montserrat +1664</option>
+                <option value="Morocco">Morocco +212</option>
+                <option value="Mozambique">Mozambique +258</option>
+                <option value="Myanmar">Myanmar +95</option>
+                <option value="Namibia">Namibia +264</option>
+                <option value="Nauru">Nauru +674</option>
+                <option value="Nepal">Nepal +977</option>
+                <option value="Netherlands">Netherlands +31</option>
+                <option value="Netherlands Antilles">Netherlands Antilles +599</option>
+                <option value="New Caledonia">New Caledonia +687</option>
+                <option value="New Zealand">New Zealand +64</option>
+                <option value="Nicaragua">Nicaragua +505</option>
+                <option value="Niger">Niger +227</option>
+                <option value="Nigeria">Nigeria +234</option>
+                <option value="Niue">Niue +683</option>
+                <option value="Norfolk Island">Norfolk Island +672</option>
+                <option value="Northern Mariana Islands">Northern Mariana Islands +1670</option>
+                <option value="Norway">Norway +47</option>
+                <option value="Oman">Oman +968</option>
+                <option value="Pakistan">Pakistan +92</option>
+                <option value="Palau">Palau +680</option>
+                <option value="Palestinian Territory, Occupied">
+                  Palestinian Territory, Occupied +970
+                </option>
+                <option value="Panama">Panama +507</option>
+                <option value="Papua New Guinea">Papua New Guinea +675</option>
+                <option value="Paraguay">Paraguay +595</option>
+                <option value="Peru">Peru +51</option>
+                <option value="Philippines">Philippines +63</option>
+                <option value="Pitcairn">Pitcairn +64</option>
+                <option value="Poland">Poland +48</option>
+                <option value="Portugal">Portugal +351</option>
+                <option value="Puerto Rico">Puerto Rico +1787</option>
+                <option value="Qatar">Qatar +974</option>
+                <option value="Reunion">Reunion +262</option>
+                <option value="Romania">Romania +40</option>
+                <option value="Russian Federation">Russian Federation +70</option>
+                <option value="Rwanda">Rwanda +250</option>
+                <option value="Saint Barthelemy">Saint Barthelemy +590</option>
+                <option value="Saint Helena">Saint Helena +290</option>
+                <option value="Saint Kitts and Nevis">Saint Kitts and Nevis +1869</option>
+                <option value="Saint Lucia">Saint Lucia +1758</option>
+                <option value="Saint Martin">Saint Martin +590</option>
+                <option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon +508</option>
+                <option value="Saint Vincent and the Grenadines">
+                  Saint Vincent and the Grenadines +1784
+                </option>
+                <option value="Samoa">Samoa +684</option>
+                <option value="San Marino">San Marino +378</option>
+                <option value="Sao Tome and Principe">Sao Tome and Principe +239</option>
+                <option value="Saudi Arabia">Saudi Arabia +966</option>
+                <option value="Senegal">Senegal +221</option>
+                <option value="Serbia">Serbia +381</option>
+                <option value="Serbia and Montenegro">Serbia and Montenegro +381</option>
+                <option value="Seychelles">Seychelles +248</option>
+                <option value="Sierra Leone">Sierra Leone +232</option>
+                <option value="Singapore">Singapore +65</option>
+                <option value="Sint Maarten">Sint Maarten +1</option>
+                <option value="Slovakia">Slovakia +421</option>
+                <option value="Slovenia">Slovenia +386</option>
+                <option value="Solomon Islands">Solomon Islands +677</option>
+                <option value="Somalia">Somalia +252</option>
+                <option value="South Africa">South Africa +27</option>
+                <option value="South Georgia and the South Sandwich Islands">
+                  South Georgia and the South Sandwich Islands +500
+                </option>
+                <option value="South Sudan">South Sudan +211</option>
+                <option value="Spain">Spain +34</option>
+                <option value="Sri Lanka">Sri Lanka +94</option>
+                <option value="Sudan">Sudan +249</option>
+                <option value="Suriname">Suriname +597</option>
+                <option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen +47</option>
+                <option value="Swaziland">Swaziland +268</option>
+                <option value="Sweden">Sweden +46</option>
+                <option value="Switzerland">Switzerland +41</option>
+                <option value="Syrian Arab Republic">Syrian Arab Republic +963</option>
+                <option value="Taiwan, Province of China">Taiwan, Province of China +886</option>
+                <option value="Tajikistan">Tajikistan +992</option>
+                <option value="Tanzania, United Republic of">Tanzania, United Republic of +255</option>
+                <option value="Thailand">Thailand +66</option>
+                <option value="Timor-Leste">Timor-Leste +670</option>
+                <option value="Togo">Togo +228</option>
+                <option value="Tokelau">Tokelau +690</option>
+                <option value="Tonga">Tonga +676</option>
+                <option value="Trinidad and Tobago">Trinidad and Tobago +1868</option>
+                <option value="Tunisia">Tunisia +216</option>
+                <option value="Turkey">Turkey +90</option>
+                <option value="Turkmenistan">Turkmenistan +7370</option>
+                <option value="Turks and Caicos Islands">Turks and Caicos Islands +1649</option>
+                <option value="Tuvalu">Tuvalu +688</option>
+                <option value="Uganda">Uganda +256</option>
+                <option value="Ukraine">Ukraine +380</option>
+                <option value="United Arab Emirates">United Arab Emirates +971</option>
+                <option value="United Kingdom">United Kingdom +44</option>
+                <option value="United States">United States +1</option>
+                <option value="United States Minor Outlying Islands">
+                  United States Minor Outlying Islands +1
+                </option>
+                <option value="Uruguay">Uruguay +598</option>
+                <option value="Uzbekistan">Uzbekistan +998</option>
+                <option value="Vanuatu">Vanuatu +678</option>
+                <option value="Venezuela">Venezuela +58</option>
+                <option value="Viet Nam">Viet Nam +84</option>
+                <option value="Virgin Islands, British">Virgin Islands, British +1284</option>
+                <option value="Virgin Islands, U.s.">Virgin Islands, U.s. +1340</option>
+                <option value="Wallis and Futuna">Wallis and Futuna +681</option>
+                <option value="Western Sahara">Western Sahara +212</option>
+                <option value="Yemen">Yemen +967</option>
+                <option value="Zambia">Zambia +260</option>
+                <option value="Zimbabwe">Zimbabwe +263</option>
+              </select>
+            </div>
+
+            <div class="input-group mb-1">
+              <span class="input-group-text bg-transparent border-0" style="opacity: 0.4;">
+                <img
+                  src="https://i.ibb.co/Z8G4hfg/email.png"
+                  class="img-fluid"
+                  width="40px"
+                />
+              </span>
+              <input
+                type="email"
+                class="form-control border-0"
+                name="email"
+                placeholder="Email address"
+                required
+              />
+            </div>
+            <div id="emailHelp" class="form-text mb-2 text-start" style="margin-left: 20px;">We'll never share your email with anyone else.</div>
+
+            <div class="input-group mb-1">
+              <span class="input-group-text bg-transparent border-0">
+                <img
+                  src="https://i.ibb.co/sH4FGww/user-icon.png"
+                  class="img-fluid"
+                  width="40px"
+                />
+              </span>
+              <input
+                id="phone"
+                type="tel"
+                class="form-control border-0"
+                name="phone"
+                placeholder="Phone"
+                required
+              />
+            </div>
+
+            <div class="input-group mb-1">
+              <span class="input-group-text bg-transparent border-0">
+                <img src="https://i.ibb.co/NnVQdWh/password.png" class="img-fluid" width="40px">
+              </span>
+              <input type="password" class="form-control border-0" name="psword" id="psword" pattern="(?=(?:.*[a-z]))(?=(?:.*[A-Z]))(?=(?:.*\d))(?=(?:.*[!@#$%^&*-])).{8,}" placeholder="Password" required>
+            </div>
+            <div id="passwordHelpBlock" class="form-text mb-2 text-start" style="margin-left: 20px;">
+              Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+            </div>
+
+            <div class="input-group mb-1">
+              <span class="input-group-text bg-transparent border-0">
+                <img src="https://i.ibb.co/NnVQdWh/password.png" class="img-fluid" width="40px">
+              </span>
+              <input type="password" class="form-control border-0" name="cpsword" id="cpsword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Confirm password" required>
+            </div>
+            <div id="cpasswordHelpBlock" class="form-text mb-2 text-start" style="margin-left: 20px;">
+              Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+            </div>
+
+            <div class="input-group mb-2">
+              <span class="input-group-text bg-transparent border-0">
+                <img src="https://i.ibb.co/sH4FGww/user-icon.png" class="img-fluid" width="40px">
+              </span>
+              <input type="text" class="form-control border-0" id="invCode" name="invCode" placeholder="Invitation code" required>
+            </div>
+            <div id="invCodeHelpBlock" class="form-text mb-2 text-start" style="margin-left: 20px;"></div>
+
+            <div class="form-check mb-4 text-start">
+              <input type="checkbox" value="" id="flexCheckChecked" checked>
+              <label class="form-check-label" for="flexCheckChecked">
+                I have read and agree with the user agreements and Privacy Policy
+              </label>
+            </div>
+
+            <div class="d-grid">
+              <button type="submit" class="btn text-white mb-2" style="background-color: purple;">Sign up now</button>
+            </div>
+
+          </form>
+
+          <div class="d-grid gap-2 text-center">
+            <a href="/" class="form-control text-white mb-3" style="background-color: darkblue; text-decoration: none;">
+              Have account, Sign In
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container" style="height: 50px"></div>
+  </section>
+
+  <script>
+
+    let psword = globalThis.document.getElementById('psword');
+    let cpsword = globalThis.document.getElementById('cpsword');
+    let feedback = globalThis.document.getElementById('cpasswordHelpBlock');
+    let invCode = globalThis.document.getElementById('invCode');
+    let feedback2 = globalThis.document.getElementById('invCodeHelpBlock');
+
+    let x = '';
+
+    psword.addEventListener('keyup', (e) => {
+      x = e.target.value;
+    });
+
+    cpsword.addEventListener('keyup', (e) => {
+      let y = e.target.value;
+
+      if (x != y) {
+        feedback.textContent = 'Password and Confirm Password must Match';
+        feedback.classList.add('text-danger');
+      }
+      else {
+        feedback.textContent = 'Success';
+        feedback.classList.remove('text-danger');
+        feedback.classList.add('text-success');
+      }
+    });
+
+    invCode.addEventListener('mouseleave', (e) => {
+      if(e.target.value === '') {
+        feedback2.textContent = 'Please enter Invitation Code';
+        feedback2.classList.add('text-danger');
+      }
+      else {
+        feedback2.textContent = '';
+        feedback2.classList.remove('text-danger');
+      }
+    })
+  </script>
+
+  <%- include('./includes/end.ejs') %>
+</body>

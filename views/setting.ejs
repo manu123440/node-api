@@ -1,0 +1,277 @@
+<%- include('./includes/head.ejs') %>
+
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="container-fluid">
+        <nav class="navbar bg-light fixed-top">
+          <div class="container-fluid mb-1 justify-content-center display-6">
+            <b>Settings</b>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="container mb-3" style="margin-top: 70px">
+      <div class="row justify-content-center">
+        <div
+          class="col-xxl mb-2 text-center p-2"
+          style="
+            font-size: 17px;
+            color: white;
+            background-image: linear-gradient(to right, #a17ce1, #2196f3);
+          "
+        >
+          <b>Security Settings</b>
+        </div>
+        <div class="col-1 bg-light mb-2">
+          <img
+            src="https://i.ibb.co/t3jScHL/verified.png"
+            class="img-fluid"
+            width="20px"
+          />
+        </div>
+        <div class="col-10 text-start bg-light mb-2">
+          <button type="button" id="login" class="btn border-0">
+            Login password
+          </button>
+        </div>
+        <div class="col-1 text-end bg-light mb-2">
+          <img
+            src="https://i.ibb.co/2nzvhpr/3.png"
+            class="img-fluid"
+            width="7px"
+          />
+        </div>
+
+        <div class="col-1 bg-light mb-2">
+          <img
+            src="https://i.ibb.co/rwRkHnK/password2.png"
+            class="img-fluid"
+            width="20px"
+          />
+        </div>
+        <div class="col-10 text-start bg-light mb-2">
+          <button type="button" id="psw" class="btn border-0">
+            Withdrawal password 10(default: login password)
+          </button>
+        </div>
+        <div class="col-1 text-end bg-light mb-2">
+          <img
+            src="https://i.ibb.co/2nzvhpr/3.png"
+            class="img-fluid"
+            width="7px"
+          />
+        </div>
+
+        <div class="col-1 bg-light mb-2">
+          <img
+            src="https://i.ibb.co/6g7C5bW/email.png"
+            class="img-fluid"
+            width="20px"
+          />
+        </div>
+        <div class="col-10 text-start bg-light mb-2">
+          <button type="button" id="email" class="btn border-0">
+            E-mail
+          </button>
+        </div>
+        <div class="col-1 text-end bg-light mb-2">
+          <img
+            src="https://i.ibb.co/2nzvhpr/3.png"
+            class="img-fluid"
+            width="7px"
+          />
+        </div>
+
+        <div class="col-1 bg-light mb-2">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/0/488.png"
+            class="img-fluid"
+            width="20px"
+          />
+        </div>
+        <div class="col-10 text-start bg-light mb-2">
+          <button type="button" id="phone" class="btn border-0">
+            Cell-phone Number
+          </button>
+        </div>
+        <div class="col-1 text-end bg-light mb-2">
+          <img
+            src="https://i.ibb.co/2nzvhpr/3.png"
+            class="img-fluid"
+            width="7px"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="d-none" id="section1">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xxl">
+          <form action="/user/settings" method="POST">
+            <div class="form-group mb-2">
+              <label for="exampleInputPassword1">Old Password</label>
+              <input
+                type="password"
+                name="oldP"
+                class="form-control"
+                id="exampleInputPassword1"
+                required
+              />
+            </div>
+
+            <div class="form-group mb-2">
+              <label for="exampleInputPassword2">New Password</label>
+              <input
+                type="password"
+                name="newP"
+                class="form-control"
+                id="exampleInputPassword2"
+                required
+              />
+            </div>
+
+            <div class="form-group mb-2">
+              <label for="exampleInputPassword3">Confirm Password</label>
+              <input
+                type="password"
+                name="confirmP"
+                class="form-control"
+                id="exampleInputPassword3"
+                required
+              />
+            </div>
+
+            <button
+              type="submit"
+              id="update"
+              class="btn btn-primary form-control"
+            >
+              UPDATE
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="d-none" id="section2">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xxl">
+          <%= x.password %>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="d-none" id="section3">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xxl">
+          <%= x.email %>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="d-none" id="section4">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xxl">
+          <%= x.phone %>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container-fluid">
+      <nav class="navbar fixed-bottom bg-light">
+          <div class="container-xxl mb-1">
+            <a class="nav-link active" aria-current="page" href="/user/home">
+              <img src="https://i.ibb.co/5h726fL/4.png" class="img-fluid" width="45px">
+            </a>
+            <a class="nav-link" href="/user/finance">
+              <img src="https://i.ibb.co/Pt063W9/financec.png" class="img-fluid" width="45px">
+            </a>
+            <a class="nav-link" href="/user/vip">
+              <img src="https://i.ibb.co/YWK3Vw6/vip.png" class="img-fluid" width="45px">
+            </a>
+            <a class="nav-link" href="/user/team">
+              <img src="https://i.ibb.co/Mf2gby4/team.png" class="img-fluid" width="45px">
+            </a>
+            <a class="nav-link"href="/user/account">
+              <img src="https://i.ibb.co/SNvqW7t/7.png" class="img-fluid" width="45px">
+            </a>
+          </div>
+        </nav>
+    </div>
+  </footer>
+
+  <script>
+    let section = globalThis.document.getElementById("section1");
+    let login = globalThis.document.getElementById("login");
+
+    let section2 = globalThis.document.getElementById("section2");
+    let psw = globalThis.document.getElementById("psw");
+
+    let section3 = globalThis.document.getElementById("section3");
+    let email = globalThis.document.getElementById("email");
+
+    let section4 = globalThis.document.getElementById("section4");
+    let phone = globalThis.document.getElementById("phone");
+
+    login.addEventListener("click", () => {
+      section.classList.toggle('d-none');
+      section.classList.toggle('d-block');
+      section2.classList.add('d-none');
+      section2.classList.remove('d-block');
+      section3.classList.add('d-none');
+      section3.classList.remove('d-block');
+      section4.classList.add('d-none');
+      section4.classList.remove('d-block');
+    });
+
+    psw.addEventListener("click", () => {
+      section2.classList.toggle('d-none');
+      section2.classList.toggle('d-block');
+      section.classList.add('d-none');
+      section.classList.remove('d-block');
+      section3.classList.add('d-none');
+      section3.classList.remove('d-block');
+      section4.classList.add('d-none');
+      section4.classList.remove('d-block');
+    });
+
+    email.addEventListener("click", () => {
+      section3.classList.toggle('d-none');
+      section3.classList.toggle('d-block');
+      section.classList.add('d-none');
+      section.classList.remove('d-block');
+      section2.classList.add('d-none');
+      section2.classList.remove('d-block');
+      section4.classList.add('d-none');
+      section4.classList.remove('d-block');
+    });
+
+    phone.addEventListener("click", () => {
+      section4.classList.toggle('d-none');
+      section4.classList.toggle('d-block');
+      section.classList.add('d-none');
+      section.classList.remove('d-block');
+      section2.classList.add('d-none');
+      section2.classList.remove('d-block');
+      section3.classList.add('d-none');
+      section3.classList.remove('d-block');
+    });
+    
+  </script>
+
+  <%- include('./includes/end.ejs') %>
+</body>

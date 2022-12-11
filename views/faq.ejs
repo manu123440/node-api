@@ -1,0 +1,54 @@
+<%- include('./includes/head.ejs') %>
+
+<body>
+
+    <header class="header">
+        <div class="header-inner">
+          <div class="container-fluid">
+            <nav class="navbar bg-light fixed-top">
+              <div class="container-fluid mb-1 justify-content-center display-6">
+                <b><%= z.title %></b>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </header>
+    
+      <section>
+        <div class="container mb-5">
+          <div
+            class="row justify-content-center"
+            style="height: 200px; margin-top: 70px"
+          >
+            <div class="col-xxl text-center">
+              <p><%= z.description %></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="container-fluid">
+          <nav class="navbar fixed-bottom bg-light">
+              <div class="container-xxl mb-1">
+                <a class="nav-link active" aria-current="page" href="/user/home">
+                  <img src="https://i.ibb.co/5h726fL/4.png" class="img-fluid" width="45px">
+                </a>
+                <a class="nav-link" href="/user/finance">
+                  <img src="https://i.ibb.co/Pt063W9/financec.png" class="img-fluid" width="45px">
+                </a>
+                <a class="nav-link" href="/user/vip">
+                  <img src="https://i.ibb.co/YWK3Vw6/vip.png" class="img-fluid" width="45px">
+                </a>
+                <a class="nav-link" href="/user/team">
+                  <img src="https://i.ibb.co/Mf2gby4/team.png" class="img-fluid" width="45px">
+                </a>
+                <a class="nav-link"href="/user/account">
+                  <img src="https://i.ibb.co/SNvqW7t/7.png" class="img-fluid" width="45px">
+                </a>
+              </div>
+            </nav>
+        </div>
+      </footer>
+    
+<%- include('./includes/end.ejs') %>

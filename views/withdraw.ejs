@@ -1,0 +1,194 @@
+<%- include('./includes/head.ejs') %>
+
+<body>
+
+	<header class="header">
+    	<div class="header-inner">
+    	  <div class="container-fluid">
+    	    <nav class="navbar bg-light fixed-top">
+    	    <div class="container-fluid mb-1 justify-content-center display-6">
+    	      <b>Withdraw</b>
+    	    </div>
+    	  </nav>
+    	  </div>
+    	</div>
+  	</header>
+
+  	<section>
+  		<div class="container">
+  			<div class="row" style="height: 365px; margin-top: 70px; ">
+  				<div class="col-xxl text-center">
+  					<img src="https://i.ibb.co/SnBjJTW/bg1-finance.png" class="img-fluid" width="350px">
+  				</div>
+  				<div class="col-xxl mt-1 align-self-center">
+  					<p>Withdrawal to: USDT(TRC20)</p>
+  				</div>
+  			</div>
+  		</div>
+  	</section>
+
+  	<section>
+  		<div class="container mb-2 bg-light" style="height: 15px;"></div>
+  	</section>
+
+  	<section>
+  		<div class="container">
+  			<div class="row justify-content-center" style="font-size: 15px;">
+  				<div class="col-xxl text-end">
+  					<p>Withdrawal amount: $<%= wAmt %></p>
+  				</div>
+  				<div class="col-xxl">
+  					<form action="/user/withdrawal" method="POST">
+  						<div class="mb-1" style="border-bottom: 1px solid gray;">
+  							<input type="text" class="form-control border-0" name="amount" id="amount" min="<%= accBBB%>" placeholder="Please enter the withdrawal amount $" onkeypress="return runScript(event)" required>
+						</div>
+  						<div>
+  							<p id="account_balance">Account balance: $<%= accBBB %></p>
+  							<div>
+  								<table class="table table-borderless table-sm">
+  									<tbody>
+  										<tr>
+  											<td>Cost</td>
+  											<td style="text-align: right;">(3%Fee)</td>
+  										</tr>
+  										<tr style="color: gray;">
+  											<td>Estimated arrival time</td>
+  											<td style="text-align: right;">within 24-48 hours</td>
+  										</tr>
+  									</tbody>
+  								</table>
+  							</div>
+  						</div>
+  				</div>
+  			</div>
+  		</div>
+  	</section>
+
+  	<section>
+  		<div class="container mb-2 bg-light" style="height: 15px;"></div>
+  	</section>
+
+  	<section>
+  		<div class="container mb-2">
+  			<div class="row justify-content-center">
+  					<div class="col-xxl mb-3">
+  						<div class="form-check">
+  							<input class="form-check-input" type="radio" name="mode" id="flexRadioDefault1" value="USDT(TRC20)" onkeypress="return runScript(event)" checked>
+  							<label class="form-check-label" for="flexRadioDefault1">
+  						  USDT(TRC20)
+  							</label>
+						</div>
+						<div class="form-check">
+  							<input class="form-check-input" type="radio" name="mode" id="flexRadioDefault2" value="BTC" onkeypress="return runScript(event)">
+  							<label class="form-check-label" for="flexRadioDefault2">
+  						  BTC
+  							</label>
+						</div>
+  					</div>
+  					<div class="col-xxl">
+  						<div class="mb-3" style="border-bottom: 1px solid gray;">
+    						<input type="text" class="form-control border-0" name="address" placeholder="Place your USDT(TRC20) wallet address" onkeypress="return runScript(event)" required>
+  						</div>
+  						<!-- change btn's bg-color -->
+  						<button type="submit" id="button" class="btn form-control" style="background-color: #a17ce1; color: white;">Immediate withdrawal</button>
+  					</div>
+  				</form>
+  			</div>
+  		</div>
+  	</section>
+
+  	<section>
+  		<div class="container mb-2">
+  			<div class="row justify-content-center">
+  				<div class="col-xxl mb-1">
+  					Withdrawal Instructions:
+  				</div>
+  				<div class="col-xxl" style="font-size: 15px;">
+  					<p>
+  						<b style="font-size: 16px;">1:</b>
+  						The withdrawal application time is limited to 9:00-18:00 (According to user local time) every day from Monday to Friday, and can't be applied for withdrawal on Saturday and Sunday. <br>
+  						<b style="font-size: 16px;">2:</b>
+  						Minimum withdrawal amount is set according to your account balance <br>
+  						<b style="font-size: 16px;">3:</b>
+  						A fee will be charged for each withdrawal. <br>
+  						<b style="font-size: 16px;">4:</b>
+  						After the application is successfully withdrawn, it will be transferred by financial review within 24-48 hours.
+  					</p>
+  				</div>
+  				<div class="col-xxl">
+  					<p>Withdrawal History:</p>
+  					<table class="table table-borderless table-sm">
+  						<thead style="background-image: linear-gradient(to right, #a17ce1, #2196f3);">
+								<tr>
+      								<th scope="col">Time</th>
+      								<th scope="col">Money($)</th>
+      								<th scope="col">State</th>
+    							</tr>
+  						</thead>
+
+  						<!-- Add Data here -->
+  						<tbody>
+							<% for(let i = z.length-1; i > 0; i--) { %>
+								<tr>
+									<td><%= z[i].date %></td>
+									<td>$<%= z[i].amount == 'NaN'? '0' : z[i].amount %></td>
+									<td><%= z[i].status %></td>
+								</tr>
+							<% } %>
+  						</tbody>
+
+  					</table>
+  				</div>
+  			</div>
+  		</div>
+  	</section>
+
+  	<section>
+  		<div class="container" style="height: 50px;"></div>
+  	</section>
+
+  	<footer>
+    	<div class="container-fluid">
+    	  <nav class="navbar fixed-bottom bg-light">
+    	      <div class="container-xxl mb-1">
+    	        <a class="nav-link active" aria-current="page" href="/user/home">
+    	          <img src="https://i.ibb.co/5h726fL/4.png" class="img-fluid" width="45px">
+    	        </a>
+    	        <a class="nav-link" href="/user/finance">
+    	          <img src="https://i.ibb.co/Pt063W9/financec.png" class="img-fluid" width="45px">
+    	        </a>
+    	        <a class="nav-link" href="/user/vip">
+    	          <img src="https://i.ibb.co/YWK3Vw6/vip.png" class="img-fluid" width="45px">
+    	        </a>
+    	        <a class="nav-link" href="/user/team">
+    	          <img src="https://i.ibb.co/Mf2gby4/team.png" class="img-fluid" width="45px">
+    	        </a>
+    	        <a class="nav-link"href="/user/account">
+    	          <img src="https://i.ibb.co/SNvqW7t/7.png" class="img-fluid" width="45px">
+    	        </a>
+    	      </div>
+    	    </nav>
+    	</div>
+  	</footer>
+
+	<script>
+		let x = '<%= accBBB%>';
+		let y = '<%= wAmt%>';
+	</script>
+	<script>
+		function runScript(e) {
+			if (e.keyCode == 13) {
+				return false;
+			}
+		}
+
+		globalThis.document.getElementById('amount').addEventListener('mouseleave', (e) => {
+			// console.log(e.target.value);
+			if (e.target.value !== y && e.target.value > x) {
+				// console.log('hii');
+				this.alert('Invalid Amount');
+			}
+		})
+	</script>
+
+<%- include('./includes/end.ejs') %>

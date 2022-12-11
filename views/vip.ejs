@@ -1,0 +1,454 @@
+<%- include('./includes/head.ejs') %>
+
+<body>
+
+	<header class="header">
+    	<div class="header-inner">
+    	  <div class="container-fluid">
+    	    <nav class="navbar bg-light fixed-top">
+    	    <div class="container-fluid mb-1 justify-content-center display-6">
+    	      <b>VIP</b>
+    	    </div>
+    	  </nav>
+    	  </div>
+    	</div>
+  	</header>
+
+  	<section>
+    	<div class="container mb-2">
+    	  <div class="row" style="height: 225px; margin-top: 62px; 
+    	  background-image: linear-gradient(to right, #a17ce1, #2196f3);">
+    	    <div class="col-xxl">
+    	      <table class="table table-borderless">
+    	      	<tbody style="font-size: 13px; color: white;">
+    	      		<tr>
+    	      			<td style="text-align: left;">Current level</td>
+    	      			<td style="text-align: right;">Machine quantity</td>
+    	      		</tr>
+    	      		<tr>
+    	      			<td style="text-align: left;" id="level_name"><%= z1.level_name %></td>
+    	      			<td style="text-align: right;"><%= z1.machine_quantity %></td>
+    	      		</tr>
+    	      		<tr>
+    	      			<td style="text-align: left;">Daily income</td>
+    	      			<td style="text-align: right;">Machine profit</td>
+    	      		</tr>
+    	      		<tr>
+    	      			<td style="text-align: left;">$<%= z1.level_income %></td>
+    	      			<td style="text-align: right;">$<%= z1.machine_profit %></td>
+    	      		</tr>
+    	      		<tr>
+    	      			<td style="text-align: left;">Min balance(Cash plede)</td>
+    	      			<td style="text-align: right;">Withdrawal amount</td>
+    	      		</tr>
+    	      		<tr>
+    	      			<td style="text-align: left;">$<%= z1.min_balance %></td>
+    	      			<td style="text-align: right;">$<%= z1.withdrawal_amount %></td>
+    	      		</tr>
+    	      	</tbody>
+    	      </table>
+    	    </div>
+    	  </div>
+    	</div>
+  	</section>
+
+  	<section>
+  		<div class="container">
+  			<div class="row justify-content-center">
+				<div class="gti">
+					<div class="col-xxl bg-light lname" style="color: darkblue;">
+						<%= x1.level_name %>
+					</div>
+
+					<div class="col-xxl" style="font-size: 13px;">
+						<table class="table table-borderless">
+							<tbody>
+								<tr>
+									<td rowspan="6" style="vertical-align: middle;">
+										<img src=<%= x1.image_url %> class="img-fluid" width="100px">
+									</td>
+									<td style="text-align: left;">Price</td>
+									<td style="text-align: right;">$<%= x1.level_price %></td>
+								</tr>
+								<tr>
+									<td style="text-align: left;">Daily income</td>
+									<td style="text-align: right;">$<%= x1.level_income %></td>
+								</tr>
+								<tr>
+									<td style="text-align: left;">Machine profit</td>
+									<td style="text-align: right;">$<%= x1.machine_profit %></td>
+								</tr>
+								<tr>
+									<td style="text-align: left;">Machine quantity</td>
+									<td style="text-align: right;"><%= x1.machine_quantity %></td>
+								</tr>
+								<tr>
+									<td style="text-align: left;">Min balance (Cash pledge)</td>
+									<td style="text-align: right;">$<%= x1.min_balance %></td>
+								</tr>
+								<tr>
+									<td style="text-align: left;">Withdrawal amount</td>
+									<td style="text-align: right;">$<%= x1.withdrawal_amount %></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div class="row text-center mb-2">
+						<div class="col-6" style="background-color: skyblue;">
+							<a class="btn" style="text-decoration: none; color: black;">$<%= x1.level_price %></a>
+						</div>
+						
+						<div class="col-6" style="background-color: dimgray;">
+							<a href="/user/buyVip/<%= x1.level_name %>" class="btn" style="text-decoration: none; color: white;">Buy now</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="gti">
+					<div class="col-xxl bg-light lname" style="color: darkblue;">
+						<%= x2.level_name %>
+					</div>
+
+					<div class="col-xxl" style="font-size: 13px;">
+						<table class="table table-borderless">
+							<tbody>
+								<tr>
+									<td rowspan="6" style="vertical-align: middle;">
+										<img src=<%= x2.image_url %> class="img-fluid" width="100px">
+									</td>
+									<td style="text-align: left;">Price</td>
+									<td style="text-align: right;">$<%= x2.level_price %></td>
+								</tr>
+								<tr>
+									<td style="text-align: left;">Daily income</td>
+									<td style="text-align: right;">$<%= x2.level_income %></td>
+								</tr>
+								<tr>
+									<td style="text-align: left;">Machine profit</td>
+									<td style="text-align: right;">$<%= x2.machine_profit %></td>
+								</tr>
+								<tr>
+									<td style="text-align: left;">Machine quantity</td>
+									<td style="text-align: right;"><%= x2.machine_quantity %></td>
+								</tr>
+								<tr>
+									<td style="text-align: left;">Min balance (Cash pledge)</td>
+									<td style="text-align: right;">$<%= x2.min_balance %></td>
+								</tr>
+								<tr>
+									<td style="text-align: left;">Withdrawal amount</td>
+									<td style="text-align: right;">$<%= x2.withdrawal_amount %></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div class="row text-center mb-2">
+						<div class="col-6" style="background-color: skyblue;">
+							<a class="btn" style="text-decoration: none; color: black;">$<%= x2.level_price %></a>
+						</div>
+						<div class="col-6" style="background-color: dimgray;">
+							<a href="/user/buyVip/<%= x2.level_name %>" class="btn" style="text-decoration: none; color: white;">Buy now</a>
+						</div>
+					</div>
+				</div>
+
+  				<!-- Add db query here -->
+				<div class="gti">
+					<div class="col-xxl bg-light lname" style="color: darkblue;">
+						<%= x3.level_name %>
+					</div>
+
+					<div class="col-xxl" style="font-size: 13px;">
+						<table class="table table-borderless">
+							<tbody>
+								<tr>
+									<td rowspan="6" style="vertical-align: middle;">
+										<img src=<%= x3.image_url %> class="img-fluid" width="100px">
+									</td>
+									<td style="text-align: left;">Price</td>
+									<td style="text-align: right;">$<%= x3.level_price %></td>
+								</tr>
+								<tr>
+									<td style="text-align: left;">Daily income</td>
+									<td style="text-align: right;">$<%= x3.level_income %></td>
+								</tr>
+								<tr>
+									<td style="text-align: left;">Machine profit</td>
+									<td style="text-align: right;">$<%= x3.machine_profit %></td>
+								</tr>
+								<tr>
+									<td style="text-align: left;">Machine quantity</td>
+									<td style="text-align: right;"><%= x3.machine_quantity %></td>
+								</tr>
+								<tr>
+									<td style="text-align: left;">Min balance (Cash pledge)</td>
+									<td style="text-align: right;">$<%= x3.min_balance %></td>
+								</tr>
+								<tr>
+									<td style="text-align: left;">Withdrawal amount</td>
+									<td style="text-align: right;">$<%= x3.withdrawal_amount %></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div class="row text-center mb-2">
+						<div class="col-6" style="background-color: skyblue;">
+							<a class="btn" style="text-decoration: none; color: black;">$<%= x3.level_price %></a>
+						</div>
+						<div class="col-6" style="background-color: dimgray;">
+							<a href="/user/buyVip/<%= x3.level_name %>" class="btn" style="text-decoration: none; color: white;">Buy now</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="gti">
+					<div class="col-xxl bg-light lname" style="color: darkblue;">
+						<%= x4.level_name %>
+					</div>
+
+					<div class="col-xxl" style="font-size: 13px;">
+						<table class="table table-borderless">
+							<tbody>
+								<tr>
+									<td rowspan="6" style="vertical-align: middle;">
+										<img src=<%= x4.image_url %> class="img-fluid" width="100px">
+									</td>
+									<td style="text-align: left;">Price</td>
+									<td style="text-align: right;">$<%= x4.level_price %></td>
+								</tr>
+								<tr>
+									<td style="text-align: left;">Daily income</td>
+									<td style="text-align: right;">$<%= x4.level_income %></td>
+								</tr>
+								<tr>
+									<td style="text-align: left;">Machine profit</td>
+									<td style="text-align: right;">$<%= x4.machine_profit %></td>
+								</tr>
+								<tr>
+									<td style="text-align: left;">Machine quantity</td>
+									<td style="text-align: right;"><%= x4.machine_quantity %></td>
+								</tr>
+								<tr>
+									<td style="text-align: left;">Min balance (Cash pledge)</td>
+									<td style="text-align: right;">$<%= x4.min_balance %></td>
+								</tr>
+								<tr>
+									<td style="text-align: left;">Withdrawal amount</td>
+									<td style="text-align: right;">$<%= x4.withdrawal_amount %></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div class="row text-center mb-2">
+						<div class="col-6" style="background-color: skyblue;">
+							<a class="btn" style="text-decoration: none; color: black;">$<%= x4.level_price %></a>
+						</div>
+						<div class="col-6" style="background-color: dimgray;">
+							<a href="/user/buyVip/<%= x4.level_name %>" class="btn" style="text-decoration: none; color: white;">Buy now</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="gti">
+					<div class="col-xxl bg-light lname" style="color: darkblue;">
+						<%= x5.level_name %>
+					</div>
+
+					<div class="col-xxl" style="font-size: 13px;">
+						<table class="table table-borderless">
+							<tbody>
+								<tr>
+									<td rowspan="6" style="vertical-align: middle;">
+										<img src=<%= x5.image_url %> class="img-fluid" width="100px">
+									</td>
+									<td style="text-align: left;">Price</td>
+									<td style="text-align: right;">$<%= x5.level_price %></td>
+								</tr>
+								<tr>
+									<td style="text-align: left;">Daily income</td>
+									<td style="text-align: right;">$<%= x5.level_income %></td>
+								</tr>
+								<tr>
+									<td style="text-align: left;">Machine profit</td>
+									<td style="text-align: right;">$<%= x5.machine_profit %></td>
+								</tr>
+								<tr>
+									<td style="text-align: left;">Machine quantity</td>
+									<td style="text-align: right;"><%= x5.machine_quantity %></td>
+								</tr>
+								<tr>
+									<td style="text-align: left;">Min balance (Cash pledge)</td>
+									<td style="text-align: right;">$<%= x5.min_balance %></td>
+								</tr>
+								<tr>
+									<td style="text-align: left;">Withdrawal amount</td>
+									<td style="text-align: right;">$<%= x5.withdrawal_amount %></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div class="row text-center mb-2">
+						<div class="col-6" style="background-color: skyblue;">
+							<a class="btn" style="text-decoration: none; color: black;">$<%= x5.level_price %></a>
+						</div>
+						<div class="col-6" style="background-color: dimgray;">
+							<a href="/user/buyVip/<%= x5.level_name %>" class="btn" style="text-decoration: none; color: white;">Buy now</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="gti">
+					<div class="col-xxl bg-light lname" style="color: darkblue;">
+						<%= x6.level_name %>
+					</div>
+
+					<div class="col-xxl" style="font-size: 13px;">
+						<table class="table table-borderless">
+							<tbody>
+								<tr>
+									<td rowspan="6" style="vertical-align: middle;">
+										<img src=<%= x6.image_url %> class="img-fluid" width="100px">
+									</td>
+									<td style="text-align: left;">Price</td>
+									<td style="text-align: right;">$<%= x6.level_price %></td>
+								</tr>
+								<tr>
+									<td style="text-align: left;">Daily income</td>
+									<td style="text-align: right;">$<%= x6.level_income %></td>
+								</tr>
+								<tr>
+									<td style="text-align: left;">Machine profit</td>
+									<td style="text-align: right;">$<%= x6.machine_profit %></td>
+								</tr>
+								<tr>
+									<td style="text-align: left;">Machine quantity</td>
+									<td style="text-align: right;"><%= x6.machine_quantity %></td>
+								</tr>
+								<tr>
+									<td style="text-align: left;">Min balance (Cash pledge)</td>
+									<td style="text-align: right;">$<%= x6.min_balance %></td>
+								</tr>
+								<tr>
+									<td style="text-align: left;">Withdrawal amount</td>
+									<td style="text-align: right;">$<%= x6.withdrawal_amount %></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div class="row text-center mb-2">
+						<div class="col-6" style="background-color: skyblue;">
+							<a class="btn" style="text-decoration: none; color: black;">$<%= x6.level_price %></a>
+						</div>
+						<div class="col-6" style="background-color: dimgray;">
+							<a href="/user/buyVip/<%= x6.level_name %>" class="btn" style="text-decoration: none; color: white;">Buy now</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="gti">
+					<div class="col-xxl bg-light lname" style="color: darkblue;">
+						<%= x7.level_name %>
+					</div>
+
+					<div class="col-xxl" style="font-size: 13px;">
+						<table class="table table-borderless">
+							<tbody>
+								<tr>
+									<td rowspan="6" style="vertical-align: middle;">
+										<img src=<%= x7.image_url %> class="img-fluid" width="100px">
+									</td>
+									<td style="text-align: left;">Price</td>
+									<td style="text-align: right;">$<%= x7.level_price %></td>
+								</tr>
+								<tr>
+									<td style="text-align: left;">Daily income</td>
+									<td style="text-align: right;">$<%= x7.level_income %></td>
+								</tr>
+								<tr>
+									<td style="text-align: left;">Machine profit</td>
+									<td style="text-align: right;">$<%= x7.machine_profit %></td>
+								</tr>
+								<tr>
+									<td style="text-align: left;">Machine quantity</td>
+									<td style="text-align: right;"><%= x7.machine_quantity %></td>
+								</tr>
+								<tr>
+									<td style="text-align: left;">Min balance (Cash pledge)</td>
+									<td style="text-align: right;">$<%= x7.min_balance %></td>
+								</tr>
+								<tr>
+									<td style="text-align: left;">Withdrawal amount</td>
+									<td style="text-align: right;">$<%= x7.withdrawal_amount %></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div class="row text-center mb-2">
+						<div class="col-6" style="background-color: skyblue;">
+							<a class="btn" style="text-decoration: none; color: black;">$<%= x7.level_price %></a>
+						</div>
+						<div class="col-6" style="background-color: dimgray;">
+							<a href="/user/buyVip/<%= x7.level_name %>" class="btn" style="text-decoration: none; color: white;">Buy now</a>
+						</div>
+					</div>
+				</div>
+
+  			</div>
+  		</div>
+  	</section>
+
+  	<section>
+  		<div class="container" style="height: 70px;"></div>
+  	</section>
+
+  	<footer>
+    	<div class="container-fluid">
+    	  <nav class="navbar fixed-bottom bg-light">
+    	      <div class="container-xxl mb-1">
+    	        <a class="nav-link active" aria-current="page" href="/user/home">
+    	          <img src="https://i.ibb.co/5h726fL/4.png" class="img-fluid" width="45px">
+    	        </a>
+    	        <a class="nav-link" href="/user/finance">
+    	          <img src="https://i.ibb.co/Pt063W9/financec.png" class="img-fluid" width="45px">
+    	        </a>
+    	        <a class="nav-link" href="/user/vip">
+    	          <img src="https://i.ibb.co/YWK3Vw6/vip.png" class="img-fluid" width="45px">
+    	        </a>
+    	        <a class="nav-link" href="/user/team">
+    	          <img src="https://i.ibb.co/Mf2gby4/team.png" class="img-fluid" width="45px">
+    	        </a>
+    	        <a class="nav-link"href="/user/account">
+    	          <img src="https://i.ibb.co/SNvqW7t/7.png" class="img-fluid" width="45px">
+    	        </a>
+    	      </div>
+    	    </nav>
+    	</div>
+  	</footer>
+
+	<script>
+		let levelName = globalThis.document.getElementById('level_name');
+		const lname = globalThis.document.querySelectorAll('.lname');
+		let gti = globalThis.document.getElementsByClassName('gti');
+
+		Array.from(lname).forEach(i => {
+			let t = i.textContent.includes(levelName.textContent);
+			if (t) {
+				i.nextElementSibling.nextElementSibling.children[1].style.backgroundColor = 'dimgray';
+				i.nextElementSibling.nextElementSibling.children[1].style.pointerEvents = 'none';
+			}
+			else {
+				i.nextElementSibling.nextElementSibling.children[1].style.backgroundColor = 'darkblue';
+				i.nextElementSibling.nextElementSibling.children[1].style.color = 'white';
+			}
+		})
+
+	</script>
+
+<%- include('./includes/end.ejs') %>

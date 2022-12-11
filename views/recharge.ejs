@@ -1,0 +1,283 @@
+<%- include('./includes/head.ejs') %>
+
+<body class="position-relative">
+
+	<style>
+		.content {
+			display: none;
+		}
+		.active {
+			display: inline-flex;
+		}
+	</style>
+
+	<header class="header">
+    	<div class="header-inner">
+    	  <div class="container-fluid">
+    	    <nav class="navbar bg-light fixed-top">
+    	    <div class="container-fluid mb-1 justify-content-center display-6">
+    	      <b>Recharge</b>
+    	    </div>
+    	  </nav>
+    	  </div>
+    	</div>
+  	</header>
+
+  	<section>
+  		<div class="container mb-4">
+  			<div class="row" style="height: 355px; margin-top: 70px; background-image: linear-gradient(to right, #a17ce1, #2196f3); color: white;">
+  				<div class="col-xxl text-center" style="font-size: 18px; padding-top: 4px;">
+  					How to recharge for your Account?
+  				</div>
+  				<div class="col-xxl text-center mb-1">
+  					<img src="https://i.ibb.co/SnBjJTW/bg1-finance.png" class="img-fluid" width="335px">
+  				</div>
+  			</div>
+  		</div>
+  	</section>
+
+  	<section>
+  		<div class="container mb-2">
+  			<div class="row justify-content-center">
+  				<div class="col-xxl mb-2">
+  					<form action="/user/recharge" method="POST">
+  						<div id="rdio" style="display: flex; justify-content: space-evenly; flex-wrap: wrap;">
+  							<div class="form-check mb-4" style="margin-right: 4px;">
+  								<input class="form-check-input" type="radio" name="price" value="$20" id="flexRadioDefault1" onkeypress="return runScript(event)" checked>
+  								<label class="form-check-label" for="flexRadioDefault1">
+  								  $20
+  								</label>
+							</div>
+							<div class="form-check mb-4" style="margin-right: 4px;">
+							  	<input class="form-check-input" type="radio" name="price" value="$50" id="flexRadioDefault2" onkeypress="return runScript(event)">
+							  	<label class="form-check-label" for="flexRadioDefault2">
+							  	  $50
+							  	</label>
+							</div>
+							<div class="form-check mb-4" style="margin-right: 4px;">
+							  	<input class="form-check-input" type="radio" name="price" value="$100" id="flexRadioDefault2" onkeypress="return runScript(event)">
+							  	<label class="form-check-label" for="flexRadioDefault2">
+							  	  $100
+							  	</label>
+							</div>
+							<div class="form-check mb-4" style="margin-right: 4px;">
+							  	<input class="form-check-input" type="radio" name="price" value="$500" id="flexRadioDefault2" onkeypress="return runScript(event)">
+							  	<label class="form-check-label" for="flexRadioDefault2">
+							  	  $500
+							  	</label>
+							</div>
+							<div class="form-check mb-4" style="margin-right: 4px;">
+							  	<input class="form-check-input" type="radio" name="price" value="$2000" id="flexRadioDefault2" onkeypress="return runScript(event)">
+							  	<label class="form-check-label" for="flexRadioDefault2">
+							  	  $2000
+							  	</label>
+							</div>
+							<div class="form-check mb-4" style="margin-right: 4px;">
+							  	<input class="form-check-input" type="radio" name="price" value="$5000" id="flexRadioDefault2" onkeypress="return runScript(event)">
+							  	<label class="form-check-label" for="flexRadioDefault2">
+							  	  $5000
+							  	</label>
+							</div>
+							<div class="form-check mb-4" style="margin-right: 4px;">
+								<input class="form-check-input" type="radio" id="customPrice" name="price" onkeypress="return runScript(event)">
+								<label class="form-check-label" for="flexRadioDefault2">
+								  Custom
+								</label>
+						  	</div>
+						</div>
+
+						<p>Minimum recharge: $20</p>
+
+						<div id="customInput" style="display: none;">
+							<div class="mb-3" style="border-bottom: 1px solid grey;">
+  								<input type="number" class="form-control count border-0" 
+								id="exampleFormControlInput1" name="price"
+								placeholder="Please enter custom amount" onkeypress="return runScript(event)">
+							</div>
+							<div id="feedback" class="form-text mb-2 text-start"></div>
+						</div>
+
+						<div>
+							<h3>Select a payment method</h3>
+
+							<div class="form-check mb-2">
+  								<input class="form-check-input" type="radio" name="mode" id="flexRadioDefault1" value="USDT(TRC20)" onkeypress="return runScript(event)" checked>
+  								<label class="form-check-label" for="flexRadioDefault1">
+  								  USDT(TRC20)
+  								</label>
+							</div>
+
+							<div class="form-check mb-3">
+								<input class="form-check-input" type="radio" name="mode" id="flexRadioDefault2" value="BTC" onkeypress="return runScript(event)">
+								<label class="form-check-label" for="flexRadioDefault2">
+								    BTC
+								</label>
+							</div>
+
+							<div class="mb-3" style="border-bottom: 1px solid grey;">
+   								<input type="text" class="form-control border-0" name="address" placeholder="Please enter your wallet address" onkeypress="return runScript(event)">
+							</div>
+						</div>
+						<button type="button" id="recharge" class="btn form-control" style="color: white; background-color: rebeccapurple;">Recharge Now</button>
+						<p>Click recharge now indicate that you have agreed to the recharge agreement</p>
+  				</div>
+
+  				<div class="col-xxl">
+  					<p>Recharge History</p>
+
+  					<table class="table table-borderless table-sm">
+  						<thead style="background-image: linear-gradient(to right, #a17ce1, #2196f3);">
+  							<tr>
+      							<th scope="col">Time</th>
+      							<th scope="col">Money($)</th>
+      							<th scope="col">State</th>
+    						</tr>
+  						</thead>
+
+  						<!-- Add Data here -->
+						<% if(x['1'] !== 'null') { %>
+							<tbody>
+								<% for(let i = x.length-1; i > 0; i--) { %>
+									<tr>
+										<td><%= x[i].date %></td>
+										<td><%= x[i].amount %></td>
+										<td><%= x[i].status %></td>
+									</tr>
+								<% } %>
+							</tbody>
+						<% } else { %>
+							<tbody></tbody>
+						<% } %>
+
+  					</table>
+  				</div>
+  			</div>
+  		</div>
+  	</section>
+
+  	<section>
+  		<div class="container" style="height: 50px;"></div>
+  	</section>
+
+  	<footer>
+    	<div class="container-fluid">
+    	  <nav class="navbar fixed-bottom bg-light">
+    	      <div class="container-xxl mb-1">
+    	        <a class="nav-link active" aria-current="page" href="/user/home">
+    	          <img src="https://i.ibb.co/5h726fL/4.png" class="img-fluid" width="45px">
+    	        </a>
+    	        <a class="nav-link" href="/user/finance">
+    	          <img src="https://i.ibb.co/Pt063W9/financec.png" class="img-fluid" width="45px">
+    	        </a>
+    	        <a class="nav-link" href="/user/vip">
+    	          <img src="https://i.ibb.co/YWK3Vw6/vip.png" class="img-fluid" width="45px">
+    	        </a>
+    	        <a class="nav-link" href="/user/team">
+    	          <img src="https://i.ibb.co/Mf2gby4/team.png" class="img-fluid" width="45px">
+    	        </a>
+    	        <a class="nav-link"href="/user/account">
+    	          <img src="https://i.ibb.co/SNvqW7t/7.png" class="img-fluid" width="45px">
+    	        </a>
+    	      </div>
+    	    </nav>
+    	</div>
+  	</footer>
+
+	<section>
+		<div class="container-sm bg-white border position-absolute top-0 start-0" style="height: 470px; padding: 3% 1%; margin-top: 5px; margin-right: 3%; visibility: hidden;" id="theImage">
+			<div class="row justify-content-center" style="word-wrap: break-word;">
+				<div class="col-xxl text-center mb-3"><h3>Deposit</h3></div>
+				<div class="col-1"></div>
+				
+					<div class="col-sm">
+						<p>To proceed with your deposit please send a minimum of $20 to your USDT(TRC20) or BTC address.</p>
+						<p><%= y !== null ? y['recharge_btc_address'] : 'your_address' %></p>
+						<p>Then click on 'I have sent' button and please wait for 24-48 hours for admin approval.</p>
+						<p><b>Warning:</b> You have to sent exactly $<b id="amt"></b> from your wallet.</p>
+						<p>If you have any problem contact us.</p>
+					</div>
+				
+				<div class="col-1"></div>
+				<div class="col-xxl text-end mt-2">
+					<button type="submit" class="btn sent border-0" style="text-decoration: none; color: purple; text-transform: uppercase; font-weight: bold;">i have sent</button><br>
+				</form>
+					<button type="button" class="btn dismiss border-0" style="color: purple; text-transform: uppercase; font-weight: bold;">dismiss</button><br>
+					<button type="button" class="btn copy border-0" value="<%= y !== null ? y['recharge_btc_address'] : '' %>" style="color: purple; text-transform: uppercase; font-weight: bold;">copy address</button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script>
+		const form = globalThis.document.querySelector('form');
+		const count = globalThis.document.querySelector('.count');
+		// const recharge = globalThis.document.getElementById('recharge');
+		const feedback = globalThis.document.getElementById('feedback');
+		let amt = 0;
+
+		let price = globalThis.document.getElementsByName('price');
+		Array.from(price).forEach(p => {
+			p.addEventListener('click', e => {
+				let val = e.target.value;
+				if (val.includes('$')) {
+					val = val.replace('$', '');
+					amt = parseFloat(val);
+				}
+				else if (val == 'on') amt = 0;
+				// console.log(amt, val);
+			})
+		})
+
+		function runScript(e) {
+			//See notes about 'which' and 'key'
+			if (e.keyCode == 13) {
+				return false;
+			}
+		}
+
+		count.addEventListener('mouseover', (e) => {
+			amt = e.target.value;
+			if (e.target.value < 20) {
+				feedback.textContent = 'Minimum amount should not be less than $20';
+				feedback.classList.add('text-danger');
+				// recharge.disabled = true;
+			}
+			else {
+				// recharge.disabled = false;
+				feedback.textContent = '';
+				feedback.classList.remove('text-danger');
+			}
+		})
+
+		const copy = globalThis.document.querySelector('.copy');
+
+		globalThis.document.querySelector('.dismiss').addEventListener('click', () => {
+			globalThis.document.getElementById("theImage").style.visibility = "hidden";
+			globalThis.document.querySelector('body').style.backgroundColor = '';
+		})
+		globalThis.document.querySelector('.sent').addEventListener('click', () => {
+			globalThis.document.getElementById("theImage").style.visibility = "hidden";
+			globalThis.document.querySelector('body').style.backgroundColor = '';
+		})
+		globalThis.document.querySelector('.copy').addEventListener('click', () => {
+			globalThis.document.getElementById("theImage").style.visibility = "hidden";
+			globalThis.document.querySelector('body').style.backgroundColor = '';
+			globalThis.navigator.clipboard.writeText(copy.value);
+		})
+
+		globalThis.document.getElementById("recharge").addEventListener("click", () => {
+			globalThis.document.getElementById("theImage").style.visibility = "visible";
+			globalThis.document.querySelector('body').style.backgroundColor = 'rgba(0,0,0,0.1)';
+			globalThis.document.getElementById("amt").textContent = amt;
+			// console.log(amt);
+		})
+
+		globalThis.document.querySelector('body').addEventListener('click', (e) => {
+			if (e.target.getAttribute('id') == 'customPrice' || e.target.parentNode.parentNode.getAttribute('id') == 'customInput') {
+				globalThis.document.getElementById('customInput').style.display = 'block';
+			}
+			else globalThis.document.getElementById('customInput').style.display = 'none';
+		})
+	</script>
+
+<%- include('./includes/end.ejs') %>

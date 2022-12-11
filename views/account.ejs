@@ -1,0 +1,150 @@
+<%- include('./includes/head.ejs') %>
+
+<body>
+
+	<header class="header">
+    	<div class="header-inner">
+    	  <div class="container-fluid">
+    	    <nav class="navbar bg-light fixed-top">
+    	    <div class="container-fluid mb-1 justify-content-center display-6">
+    	      <b>Account</b>
+    	    </div>
+    	  </nav>
+    	  </div>
+    	</div>
+  	</header>
+
+  	<section>
+  		<div class="container mb-3">
+  			<div class="row" style="height: 210px; margin-top: 72px; border-radius: 10px;
+  			background-image: linear-gradient(to right, #a17ce1, #2196f3); padding: 5px 0;">
+
+  				<div class="col-6" style="color: white;">
+  					<img src="https://i.ibb.co/pr9kgDP/vip.png" class="img-fluid" width="40px">
+  					<b>$<%= x1.main_balance %></b>
+  				</div>
+
+  				<div class="col-6 text-end">
+  					<button type="button" class="btn border-0" 
+  					style="background-color: orange; color: white;">
+  						<%= x1.current_level %>
+  					</button>
+  				</div>
+
+  				<div class="col-xxl" style="border-top: 1px solid white;">
+  					<table class="table table-borderless">
+  						<tbody>
+  							<tr>
+  								<td>Today income</td>
+  								<td>Total income</td>
+  								<td rowspan="3"><img src="https://i.ibb.co/Wt0jdDP/currency.png"></td>
+  							</tr>
+  							<tr>
+  								<td><img src="https://i.ibb.co/Wt0jdDP/currency.png" class="img-fluid" width="20px">$<%= (today == income_date) ? x1.today_income : '0' %></td>
+  								<td><img src="https://i.ibb.co/Wt0jdDP/currency.png" class="img-fluid" width="20px">$<%= x1.total_income %></td>
+  							</tr>
+  							<tr>
+  								<td>
+  									<a href="/user/withdrawal" class="btn" style="text-decoration: none; background-color: orange;">Withdrawal</a>
+  								</td>
+  								<td>
+  									<a href="/user/recharge" class="btn" style="text-decoration: none; background-color: orange;">Recharge</a>
+  								</td>
+  							</tr>
+  						</tbody>
+  					</table>
+  				</div>
+  			</div>
+  		</div>
+  	</section>
+
+  	<section>
+  		<div class="container mb-3 text-center">
+  			<div class="row justify-content-center">
+  				<div class="col-6">
+					<a href="https://t.me/Crypto_Invest_Mining" target="_blank" style="text-decoration: none; color: black;">
+						<img src="https://i.ibb.co/mzGGDk2/service.png" class="img-fluid" width="50px">
+  						<p>Service</p>
+					</a>
+  				</div>
+  				<div class="col-6">
+					<a href="/user/faq" style="text-decoration: none; color: black;" target="_blank">
+						<img src="https://i.ibb.co/CmFszNP/faq.png" class="img-fluid" width="50px">
+  						<p>FAQ</p>
+					</a>
+  				</div>
+  			</div>
+  		</div>
+  	</section>
+
+  	<section>
+  		<div class="container mb-3 border">
+  			<div class="row text-center">
+  				<div class="col-6">
+  					<a href="<%= k4.whatsapp %>" target="_blank" style="text-decoration: none;">
+  						<img src="https://i.ibb.co/zrjkm6T/whatsapp-jpeg.png" class="img-fluid" width="120px">
+  					</a>
+  				</div>
+  				<div class="col-6">
+  					<a href="<%= k4.telegram %>" target="_blank" style="text-decoration: none;">
+  						<img src="https://i.ibb.co/7Nt1z7F/telegram-group.png" class="img-fluid" width="120px">
+  					</a>
+  				</div>
+  			</div>
+  		</div>
+  	</section>
+
+  	<section>
+  		<div class="container border">
+  			<div class="row" style="padding: 12px 0;">
+				<div class="col-2">
+					<img src="https://i.ibb.co/K7CRy8w/password2.png" class="img-fluid" width="20px">
+				</div>
+				<div class="col-8 text-start">
+					<a href="/settings" style="text-decoration: none; color: black;">Settings</a>
+				</div>
+				<div class="col-2 text-end">
+					<img src="https://i.ibb.co/2nzvhpr/3.png" class="img-fluid" width="7px">
+				</div>
+  				<div class="col-2 mt-2">
+  					<img src="https://i.ibb.co/SsQHKyd/logout.png" class="img-fluid" width="20px">
+  				</div>
+  				<div class="col-8 text-start mt-2">
+  					<a href="/" style="text-decoration: none; color: black;">Logout</a>
+  				</div>
+  				<div class="col-2 text-end mt-2">
+  					<img src="https://i.ibb.co/2nzvhpr/3.png" class="img-fluid" width="7px">
+  				</div>
+  			</div>
+  		</div>
+  	</section>
+
+  	<section>
+  		<div class="container" style="height: 70px;"></div>
+  	</section>
+
+  	<footer>
+    	<div class="container-fluid">
+    	  <nav class="navbar fixed-bottom bg-light">
+    	      <div class="container-xxl mb-1">
+    	        <a class="nav-link active" aria-current="page" href="/user/home">
+    	          <img src="https://i.ibb.co/5h726fL/4.png" class="img-fluid" width="45px">
+    	        </a>
+    	        <a class="nav-link" href="/user/finance">
+    	          <img src="https://i.ibb.co/Pt063W9/financec.png" class="img-fluid" width="45px">
+    	        </a>
+    	        <a class="nav-link" href="/user/vip">
+    	          <img src="https://i.ibb.co/YWK3Vw6/vip.png" class="img-fluid" width="45px">
+    	        </a>
+    	        <a class="nav-link" href="/user/team">
+    	          <img src="https://i.ibb.co/Mf2gby4/team.png" class="img-fluid" width="45px">
+    	        </a>
+    	        <a class="nav-link"href="/user/account">
+    	          <img src="https://i.ibb.co/SNvqW7t/7.png" class="img-fluid" width="45px">
+    	        </a>
+    	      </div>
+    	    </nav>
+    	</div>
+  	</footer>  	
+
+<%- include('./includes/end.ejs') %>

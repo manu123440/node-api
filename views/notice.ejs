@@ -1,0 +1,84 @@
+<%- include('./includes/head.ejs') %>
+
+<body>
+
+    <header class="header">
+		<div class="header-inner">
+			<div class="container-fluid">
+				<nav class="navbar bg-light fixed-top">
+				<div class="container-fluid mb-1 justify-content-center display-6">
+					<b>Notice</b>
+				</div>
+			</nav>
+			</div>
+		</div>
+	</header>
+
+	<section>
+		<div class="container mb-3">
+			<div class="row" style="height: 220px; margin-top: 70px; padding: 2px 0;">
+				<% if(z.length > 1) { %>
+					<% for(let i = 1; i < z.length; i++) { %>
+						<div class="col-xxl bg-light">
+							<%= z[i].subject %>
+						</div>
+						<div class="col-xxl bg-light">
+							<%= z[i].message %>
+						</div>
+						<div class="col-6 bg-light">
+							<%= z[i].date %> <%= z[i].time %>
+						</div>
+						<div class="col-6 text-end bg-light">
+							<button type="button" id="btn" class="btn border-0">View Details</button>
+						</div>
+						<section class="d-none" id="section1">
+							<div class="container">
+								<div class="row">
+									<div class="col-xxl text-center border-0 bg-light">
+										<%= z[i].message %>
+									</div>
+								</div>
+							</div>
+						</section>
+					<% } %>
+				<% } else { %>
+				<% } %>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<div class="container-fluid">
+			<nav class="navbar fixed-bottom bg-light">
+					<div class="container-xxl mb-1">
+						<a class="nav-link active" aria-current="page" href="/user/home">
+							<img src="https://i.ibb.co/5h726fL/4.png" class="img-fluid" width="45px">
+						</a>
+						<a class="nav-link" href="/user/finance">
+							<img src="https://i.ibb.co/Pt063W9/financec.png" class="img-fluid" width="45px">
+						</a>
+						<a class="nav-link" href="/user/vip">
+							<img src="https://i.ibb.co/YWK3Vw6/vip.png" class="img-fluid" width="45px">
+						</a>
+						<a class="nav-link" href="/user/team">
+							<img src="https://i.ibb.co/Mf2gby4/team.png" class="img-fluid" width="45px">
+						</a>
+						<a class="nav-link"href="/user/account">
+							<img src="https://i.ibb.co/SNvqW7t/7.png" class="img-fluid" width="45px">
+						</a>
+					</div>
+				</nav>
+		</div>
+	</footer>
+
+	<script>
+		const btn = globalThis.document.getElementById('btn');
+		const section = globalThis.document.getElementById('section1');
+
+		btn.addEventListener("click", () => {
+	      section.classList.toggle('d-none');
+	      section.classList.toggle('d-block');
+	    });
+	</script>
+    
+<%- include('./includes/end.ejs') %>

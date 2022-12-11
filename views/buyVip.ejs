@@ -1,0 +1,121 @@
+<%- include('./includes/head.ejs') %>
+
+<body>
+
+    <style>
+        .popup-wrapper {
+            background: rgba(0,0,0,0.5);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+        .popup {
+            text-align: center;
+            width: 100%;
+            margin: 5% auto;
+            padding: 20px;
+            background: white;
+            position: absolute;
+            top: 150px;
+            left: 10px;
+            max-width: 500px;
+            height: 200px;
+            cursor: pointer;
+        }
+    </style>
+
+    <div class="container-lg my-5 p-2 bg-light">
+        <div class="row justify-content-center">
+            <div class="col-xxl text-center mb-1" style="font-size: 20px;">
+                <b><%= x.level_name %></b>
+            </div>
+            <div class="col-xxl mb-2">
+                <p style="font-weight: bold; font-size: 18px;">Buy VIP 1</p>
+                <table class="table table-borderless">
+                    <tbody>
+                        <tr>
+                            <td style="text-align: left;">Price</td>
+                            <td style="text-align: right; font-weight: bold;">$<%= x.level_price %></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;">Machine Profit</td>
+                            <td style="text-align: right; font-weight: bold;">$<%= x.machine_profit %></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;">Machine Quantity</td>
+                            <td style="text-align: right; font-weight: bold;"><%= x.machine_quantity %></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;">Min balance(Cash pledge)</td>
+                            <td style="text-align: right; font-weight: bold;">$<%= x.min_balance %></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-xxl text-center mb-2">
+                <a href="<%= accBal < price  ? 'javascript:void(0)' : '#' %>" class="btn p-1 form-control bolder-0" style="background-color: darkblue; color: white; text-decoration: none;">Buy</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup-wrapper">
+        <div class="popup border">
+            <div class="popup-content">
+                <h3>Buy Vip level</h3>
+                <p class="mt-4">Are you confirmed to buy this level?</p>
+                <br>
+                <div class="text-end mt-4">
+                    <a href="/user/buyVip/<%= x.level_name %>" style="margin-right: 40px; text-decoration: none; color: purple; text-transform: uppercase; font-weight: bold;">Cancel</a>
+                    <a href="/user/yesConfirm/<%= x.level_name %>" style="text-decoration: none; color: purple; text-transform: uppercase; font-weight: bold;"> yes Confirmed</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+    	<div class="container-fluid">
+    	  <nav class="navbar fixed-bottom bg-light">
+    	      <div class="container-xxl mb-1">
+    	        <a class="nav-link active" aria-current="page" href="/user/home">
+    	          <img src="https://i.ibb.co/5h726fL/4.png" class="img-fluid" width="45px">
+    	        </a>
+    	        <a class="nav-link" href="/user/finance">
+    	          <img src="https://i.ibb.co/Pt063W9/financec.png" class="img-fluid" width="45px">
+    	        </a>
+    	        <a class="nav-link" href="/user/vip">
+    	          <img src="https://i.ibb.co/YWK3Vw6/vip.png" class="img-fluid" width="45px">
+    	        </a>
+    	        <a class="nav-link" href="/user/team">
+    	          <img src="https://i.ibb.co/Mf2gby4/team.png" class="img-fluid" width="45px">
+    	        </a>
+    	        <a class="nav-link"href="/user/account">
+    	          <img src="https://i.ibb.co/SNvqW7t/7.png" class="img-fluid" width="45px">
+    	        </a>
+    	      </div>
+    	    </nav>
+    	</div>
+  	</footer>
+
+    <script>
+        let level = '<%= x.level_name %>';
+    </script>
+    <script>
+        const button = globalThis.document.querySelector('.btn');
+        const popup = globalThis.document.querySelector('.popup-wrapper');
+
+        if(level == 'Free VIP') {
+            button.setAttribute('href', 'javascript:void(0)');
+        }
+
+        if(button.getAttribute('href') == '#') {
+            button.addEventListener('click', () => {
+            popup.style.display = 'block';
+        });
+        }
+
+    </script>
+
+<%- include('./includes/end.ejs') %>

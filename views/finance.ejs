@@ -1,0 +1,335 @@
+<%- include('./includes/head.ejs') %>
+
+<body>
+
+	<style>
+		.content {
+			display: none;
+		}
+		.content.active {
+			display: inline-flex;
+		}
+	</style>
+
+	<header class="header">
+		<div class="header-inner">
+			<div class="container-fluid">
+				<nav class="navbar bg-light fixed-top">
+				<div class="container-fluid mb-1 justify-content-center display-6">
+					<b>Finance</b>
+				</div>
+			</nav>
+			</div>
+		</div>
+	</header>
+
+	<section>
+		<div class="container">
+			<div class="row justify-content-center position-relative top-0 start-0" 
+			style="height: 300px; margin-top: 65px; background-image: url('https://i.ibb.co/72WSXV6/bg1-finance.png'); background-repeat: no-repeat; background-size: contain; background-position: center;">
+			<div class="row text-center position-absolute bottom-0" style="width: 320px; height: -30px; margin-bottom: 10px;">
+				<div class="col-6" style="background-color: white;">
+					<img src="https://i.ibb.co/D7zgHjX/fund-btc.png" class="img-fluid" width="20px">My investment
+					<p>$<%= y1.my_investment %></p>
+				</div>
+				<div class="col-6" style="background-color: white;">
+					My income
+					<p>$<%= y1.product_income %></p>
+				</div>
+			</div>
+		</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="container text-center">
+			<article class="about">
+				<div class="row justify-content-center bg-light">
+					<div class="col-6">
+						<button class="tab-btn border-0 p-2" style="background: transparent;" data-id="products">Products</button>
+					</div>
+					<div class="col-6" style="background-color: darkblue; color: white;">
+						<button class="tab-btn border-0 p-2" style="background: transparent; color: white;" data-id="myFunds">My Funds</button>
+					</div>
+				</div>
+		</div>
+	</section>
+
+	<section>
+			<div class="container mb-3">
+				<article class="about-content">
+					<div class="row justify-content-center mb-2 content active" id="products" style="padding: 2%;">
+
+						<div class="col-xxl">
+							<table class="table table-borderless">
+								<tbody>
+								<tr>
+										<td style="color: skyblue;"><%= x1.title %></td>
+									</tr>
+									<tr>
+										<td rowspan="3"><img src=<%= x1.image_url %> class="img-fluid" width="100px"></td>
+										<td>Daily rate</td>
+										<td style="text-align: right;"><%= x1.daily_rate %></td>
+									</tr>
+									<tr>
+										<td>Min invest</td>
+										<td style="text-align: right;">$<%= x1.min_invest %></td>
+									</tr>
+									<tr>
+										<td>Duration</td>
+										<td style="text-align: right;"><%= x1.duration %> day</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="col-6 text-center" style="background-color: skyblue;">
+							<a class="btn" style="text-decoration: none; color: darkblue;">Min invest: $<%= x1.min_invest %></a>
+						</div>
+						<div class="col-6 text-center" style="background-color: darkblue;">
+							<a href="/user/financial/<%= x1.p_id %>" class="btn" style="text-decoration: none; color: white;">View</a>
+						</div>
+
+						<div class="col-xxl">
+							<table class="table table-borderless">
+								<tbody>
+									<tr>
+										<td style="color: skyblue;"><%= x2.title %></td>
+									</tr>
+									<tr>
+										<td rowspan="3"><img src=<%= x2.image_url %> class="img-fluid" width="100px"></td>
+										<td>Daily rate</td>
+										<td style="text-align: right;"><%= x2.daily_rate %></td>
+									</tr>
+									<tr>
+										<td>Min invest</td>
+										<td style="text-align: right;">$<%= x2.min_invest %></td>
+									</tr>
+									<tr>
+										<td>Duration</td>
+										<td style="text-align: right;"><%= x2.duration %> day</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="col-6 text-center" style="background-color: skyblue;">
+							<a class="btn" style="text-decoration: none; color: darkblue;">Min invest: $<%= x2.min_invest %></a>
+						</div>
+						<div class="col-6 text-center" style="background-color: darkblue;">
+							<a href="/user/financial/<%= x2.p_id %>" class="btn" style="text-decoration: none; color: white;">View</a>
+						</div>
+						<!-- More data here -->
+
+						<div class="col-xxl">
+							<table class="table table-borderless">
+								<tbody>
+									<tr>
+										<td style="color: skyblue;"><%= x3.title %></td>
+									</tr>
+									<tr>
+										<td rowspan="3"><img src=<%= x3.image_url %> class="img-fluid" width="100px"></td>
+										<td>Daily rate</td>
+										<td style="text-align: right;"><%= x3.daily_rate %></td>
+									</tr>
+									<tr>
+										<td>Min invest</td>
+										<td style="text-align: right;">$<%= x3.min_invest %></td>
+									</tr>
+									<tr>
+										<td>Duration</td>
+										<td style="text-align: right;"><%= x3.duration %> day</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="col-6 text-center" style="background-color: skyblue;">
+							<a class="btn" style="text-decoration: none; color: darkblue;">Min invest: $<%= x3.min_invest %></a>
+						</div>
+						<div class="col-6 text-center" style="background-color: darkblue;">
+							<a href="/user/financial/<%= x3.p_id %>" class="btn" style="text-decoration: none; color: white;">View</a>
+						</div>
+
+						<div class="col-xxl">
+							<table class="table table-borderless">
+								<tbody>
+									<tr>
+										<td style="color: skyblue;"><%= x4.title %></td>
+									</tr>
+									<tr>
+										<td rowspan="3"><img src=<%= x4.image_url %> class="img-fluid" width="100px"></td>
+										<td>Daily rate</td>
+										<td style="text-align: right;"><%= x4.daily_rate %></td>
+									</tr>
+									<tr>
+										<td>Min invest</td>
+										<td style="text-align: right;">$<%= x4.min_invest %></td>
+									</tr>
+									<tr>
+										<td>Duration</td>
+										<td style="text-align: right;"><%= x4.duration %> day</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="col-6 text-center" style="background-color: skyblue;">
+							<a class="btn" style="text-decoration: none; color: darkblue;">Min invest: $<%= x4.min_invest %></a>
+						</div>
+						<div class="col-6 text-center" style="background-color: darkblue;">
+							<a href="/user/financial/<%= x4.p_id %>" class="btn" style="text-decoration: none; color: white;">View</a>
+						</div>
+
+						<div class="col-xxl">
+							<table class="table table-borderless">
+								<tbody>
+								<tr>
+									<td style="color: skyblue;"><%= x5.title %></td>
+								</tr>
+									<tr>
+										<td rowspan="3"><img src=<%= x5.image_url %> class="img-fluid" width="100px"></td>
+										<td>Daily rate</td>
+										<td style="text-align: right;"><%= x5.daily_rate %></td>
+									</tr>
+									<tr>
+										<td>Min invest</td>
+										<td style="text-align: right;">$<%= x5.min_invest %></td>
+									</tr>
+									<tr>
+										<td>Duration</td>
+										<td style="text-align: right;"><%= x5.duration %> day</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="col-6 text-center" style="background-color: skyblue;">
+							<a class="btn" style="text-decoration: none; color: darkblue;">Min invest: $<%= x5.min_invest %></a>
+						</div>
+						<div class="col-6 text-center" style="background-color: darkblue;">
+							<a href="/user/financial/<%= x5.p_id %>" class="btn" style="text-decoration: none; color: white; padding-top: 3px;">View</a>
+						</div>
+
+						<div class="col-xxl">
+							<table class="table table-borderless">
+								<tbody>
+									<tr>
+										<td style="color: skyblue;"><%= x6.title %></td>
+									</tr>
+									<tr>
+										<td rowspan="3"><img src=<%= x6.image_url %> class="img-fluid" width="100px"></td>
+										<td>Daily rate</td>
+										<td style="text-align: right;"><%= x6.daily_rate %></td>
+									</tr>
+									<tr>
+										<td>Min invest</td>
+										<td style="text-align: right;">$<%= x6.min_invest %></td>
+									</tr>
+									<tr>
+										<td>Duration</td>
+										<td style="text-align: right;"><%= x6.duration %> day</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="col-6 text-center" style="background-color: skyblue;">
+							<a class="btn" style="text-decoration: none; color: darkblue;">Min invest: $<%= x6.min_invest %></a>
+						</div>
+						<div class="col-6 text-center" style="background-color: darkblue;">
+							<a href="/user/financial/<%= x6.p_id %>" class="btn" style="text-decoration: none; color: white;">View</a>
+						</div>
+					</div>
+
+					<div class="row justify-content-center mb-2 content" id="myFunds" style="width: 100%">
+						<% if(z1) { %>
+							<% if(z1.length >= 1) { %>
+								<% for(let i = 1; i < z1.length; i++) { %>
+									<% if(z1[i].status == 'active') { %>
+                                    		<div class="col-xxl">
+										<table class="table table-borderless">
+											<tbody>
+												<tr>
+														<td style="color: skyblue">
+															<%= z1[i].product_name %>
+														</td>
+												</tr>
+												<tr>
+														<td rowspan="3"><img src="https://cash4.fun/images/cash4app/products/p1.png" class="img-fluid" width="100px"></td>
+														<td>Daily rate</td>
+														<td style="text-align: right;"><%= z1[i].daily_rate %></td>
+												</tr>
+												<tr>
+														<td>Min invest</td>
+														<td style="text-align: right;">$<%= z1[i].min_invest %></td>
+												</tr>
+												<tr>
+														<td>Duration</td>
+														<td style="text-align: right;"><%= z1[i].duration %> day</td>
+												</tr>
+											</tbody>
+										</table>
+											</div>
+										<div class="col-6 text-center" style="background-color: skyblue;">
+											<a class="btn" style="text-decoration: none; color: darkblue;">Min invest: $<%= z1[i].min_invest %></a>
+										</div>
+										<div class="col-6 text-center" style="background-color: darkblue;">
+											<a href="javascript:void(0);" class="btn" style="text-decoration: none; color: white;">View</a>
+										</div>
+									<% } %>
+								<% } %>
+							<% } %>
+						<% } %>
+					</div>
+					</div>
+				</article>
+			</div>
+		</article>
+	</section>
+
+	<section>
+		<div class="container" style="height: 50px;"></div>
+	</section>
+
+	<footer>
+		<div class="container-fluid">
+			<nav class="navbar fixed-bottom bg-light">
+					<div class="container-xxl mb-1">
+						<a class="nav-link active" aria-current="page" href="/user/home">
+							<img src="https://i.ibb.co/5h726fL/4.png" class="img-fluid" width="45px">
+						</a>
+						<a class="nav-link" href="/user/finance">
+							<img src="https://i.ibb.co/Pt063W9/financec.png" class="img-fluid" width="45px">
+						</a>
+						<a class="nav-link" href="/user/vip">
+							<img src="https://i.ibb.co/YWK3Vw6/vip.png" class="img-fluid" width="45px">
+						</a>
+						<a class="nav-link" href="/user/team">
+							<img src="https://i.ibb.co/Mf2gby4/team.png" class="img-fluid" width="45px">
+						</a>
+						<a class="nav-link"href="/user/account">
+							<img src="https://i.ibb.co/SNvqW7t/7.png" class="img-fluid" width="45px">
+						</a>
+					</div>
+				</nav>
+		</div>
+	</footer>
+
+	<script>
+		const btns = globalThis.document.querySelectorAll(".tab-btn");
+		const about = globalThis.document.querySelector(".about");
+		const articles = globalThis.document.querySelectorAll(".content");
+
+		about.addEventListener("click", (e) => {
+			const id = e.target.dataset.id;
+			if (id) {
+				btns.forEach(btn => {
+					btn.classList.remove('text-primary');
+					e.target.classList.add('text-primary');
+				})
+
+				articles.forEach(article => {
+					article.classList.remove('active');
+				})
+				const element = globalThis.document.getElementById(id);
+				element.classList.add('active');
+			}
+		})
+	</script>
+
+<%- include('./includes/end.ejs') %>

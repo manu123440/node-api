@@ -1,0 +1,449 @@
+<%- include('./includes/head.ejs') %>
+
+<body>
+
+	<style>
+		.content {
+			display: none;
+		}
+		.content.active {
+			display: inline-flex;
+		}
+	</style>
+
+	<header class="header">
+		<div class="header-inner">
+			<div class="container-fluid">
+				<nav class="navbar bg-light fixed-top">
+				<div class="container-fluid mb-1 justify-content-center display-6">
+					<b>Home</b>
+				</div>
+			</nav>
+			</div>
+		</div>
+	</header>
+
+	<section>
+		<div class="container mb-3">
+			<div class="row justify-content-center" 
+			style="height: 230px; margin-top: 75px; border-radius: 10px;
+			background-image: linear-gradient(to right, #a17ce1, #2196f3);">
+				<div class="col-8 align-self-center" style="font-size: 17px; color: white; padding: 4px 0 0 20px;">
+					Total machine output<br>
+    				$<%= data.total_earnings %><br>
+    				$<%= data.machine_profit %>/day<br>
+    				Account Balance<br>
+    				$<%= data2.main_balance %>
+    				<p class="display-6" style="text-align: center;"><%= data2.current_level %>
+					<a href="<%= kty.store_link %>" class="btn border-0" target="_blank" style="text-decoration: none;">
+						<img src="https://i.ibb.co/8NsYLTL/68747470733a2f2f706c617965727a6f6e2e636f6d2f61737365742f646f776e6c6f61642e706e67.png" class="img-fluid" style="width: 200px; height: 60px;">
+					</a></p>
+				</div>
+    			<div class="col-4 align-self-center">
+    				<img src="https://i.ibb.co/zFdPY4D/10.png" class="img-fluid" width="150px">
+    			</div>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="container mb-3">
+			<div class="row justify-content-center" style="background-image: linear-gradient(#a17ce1, pink); border-radius: 5px;">
+				<div class="col-xxl text-center">
+					<p style="font-size: 30px;">Cryptoinmi</p>
+				</div>
+
+				<div class="col-xxl mb-1">
+					<div class="row text-light" style="font-size: 13px;">
+						<div class="col text-center">
+							<a href="/user/faq" target="_blank" style="text-decoration: none; color: white;"><img src="https://i.ibb.co/1qrGw6x/5.png" class="img-fluid" width="30px"></a>
+							<p>FAQ</p>
+						</div>
+						<div class="col text-center">
+							<a href="/user/team" target="_blank" style="text-decoration: none; color: white;"><img src="https://i.ibb.co/CvXFVbx/faq.png" class="img-fluid" width="30px"></a>
+							<p>Invite</p>
+						</div>
+						<div class="col text-center">
+							<a href="/user/notice" target="_blank" style="text-decoration: none; color: white;"><img src="https://i.ibb.co/59hFvx0/notice.png" class="img-fluid" width="30px"></a>
+							<p>Notice</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-xxl mb-1 text-center" 
+					style="border-radius: 2px; margin: 0 10px;">
+					<img src="https://cash4.fun/images/cash4app/vip_levels/vip6.png" class="img-fluid" width="300px">
+				</div>
+
+				<div class="col-xxl mb-1" style="display: flex; justify-content: center;">
+					<div class="row">
+						<div class="col">
+							<a href="<%= kty.whatsapp %>" target="_blank"><img src="https://i.ibb.co/GVvy8Qs/whatsapp-jpeg.png" class="img-fluid" width="130px"></a>
+						</div>
+						<div class="col">
+							<a href="<%= kty.telegram %>" target="_blank"><img src="https://i.ibb.co/vBnvmt7/telegram-group.png" class="img-fluid" width="130px"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="container mb-3">
+			<article class="about">
+				<div class="row mb-1" style="font-weight: bold;">
+					<div class="col" style="font-size: 13px;">
+          				<button class="tab-btn border-0 p-2 text-primary" style="background: transparent;" data-id="FreeVIP">FREE VIP</a>
+          			</div>
+					<div class="col">
+          				<button class="tab-btn border-0 p-2" style="background: transparent;" data-id="vip1">VIP1</a>
+          			</div>
+					<div class="col">
+          				<button class="tab-btn border-0 p-2" style="background: transparent;" data-id="vip2">VIP2</a>
+          			</div>
+					<div class="col">
+          				<button class="tab-btn border-0 p-2" style="background: transparent;" data-id="vip3">VIP3</a>
+          			</div>
+					<div class="col">
+          				<button class="tab-btn border-0 p-2" style="background: transparent;" data-id="vip4">VIP4</a>
+          			</div>
+					<div class="col">
+						<button class="tab-btn border-0 p-2" style="background: transparent;" data-id="vip5">VIP5</a>
+					</div>
+					<div class="col">
+						<button class="tab-btn border-0 p-2" style="background: transparent;" data-id="vip6">VIP6</a>
+					</div>
+				</div>
+			<!-- set more vip data -->
+			
+				<article class="about-content">
+					<div class="row bg-light content active" id="FreeVIP" style="width: 100%;">
+					<div class="col-4 text-center">
+						<img src="https://i.ibb.co/DC5YZ6z/machine.png" class="img-fluid" width="100px">
+					</div>
+					<div class="col-5 align-self-center">
+						<p style="color: red;"><%= freeVip.machine_name %></p>
+						<p>Machine Profits</p>
+					</div>
+					<div class="col-3 align-self-center">
+						<p style="color: red;">$<%= freeVip.machine_profit %></p>
+					</div>
+					<div class="col-xxl text-center mt-2">
+						<a href="javascript:void(0);" class="btn bb text-white"
+							style="background-color: purple; width: 100%; text-decoration: none;">
+								Waiting to unlock
+						</a>
+					</div>
+					</div>
+					<div class="row bg-light content" id="vip1" style="width: 100%;">
+					<div class="col-4 text-center">
+						<img src="https://i.ibb.co/DC5YZ6z/machine.png" class="img-fluid" width="100px">
+					</div>
+					<div class="col-5 align-self-center">
+						<p style="color: red;"><%= Vip1.machine_name %></p>
+						<p>Machine Profits</p>
+					</div>
+					<div class="col-3 align-self-center">
+						<p style="color: red;">$<%= Vip1.machine_profit %></p>
+					</div>
+					<div class="col-xxl text-center mt-2">
+						<a href="javascript:void(0);"class="btn bb text-white"
+							style="background-color: purple; width: 100%; text-decoration: none;">
+								Waiting to unlock
+						</a>
+					</div>
+					</div>
+					<div class="row bg-light content" id="vip2" style="width: 100%;">
+					<div class="col-4 text-center">
+						<img src="https://i.ibb.co/DC5YZ6z/machine.png" class="img-fluid" width="100px">
+					</div>
+					<div class="col-5 align-self-center">
+						<p style="color: red;"><%= Vip2.machine_name %></p>
+						<p>Machine Profits</p>
+					</div>
+					<div class="col-3 align-self-center">
+						<p style="color: red;">$<%= Vip2.machine_profit %></p>
+					</div>
+					<div class="col-xxl text-center mt-2">
+						<a href="javascript:void(0);"class="btn bb text-white"
+							style="background-color: purple; width: 100%;  text-decoration: none;">
+								Waiting to unlock
+						</a>
+					</div>
+					</div>
+					<div class="row bg-light content" id="vip3" style="width: 100%;">
+					<div class="col-4 text-center">
+						<img src="https://i.ibb.co/DC5YZ6z/machine.png" class="img-fluid" width="100px">
+					</div>
+					<div class="col-5 align-self-center">
+						<p style="color: red;"><%= Vip3.machine_name %></p>
+						<p>Machine Profits</p>
+					</div>
+					<div class="col-3 align-self-center">
+						<p style="color: red;">$<%= Vip3.machine_profit %></p>
+					</div>
+					<div class="col-xxl text-center mt-2">
+						<a href="javascript:void(0);"class="btn bb text-white"
+							style="background-color: purple; width: 100%;  text-decoration: none;">
+								Waiting to unlock
+						</a>
+					</div>
+					</div>
+					<div class="row bg-light content" id="vip4" style="width: 100%;">
+					<div class="col-4 text-center">
+						<img src="https://i.ibb.co/DC5YZ6z/machine.png" class="img-fluid" width="100px">
+					</div>
+					<div class="col-5 align-self-center">
+						<p style="color: red;"><%= Vip4.machine_name %></p>
+						<p>Machine Profits</p>
+					</div>
+					<div class="col-3 align-self-center">
+						<p style="color: red;">$<%= Vip4.machine_profit %></p>
+					</div>
+					<div class="col-xxl text-center mt-2">
+						<a href="javascript:void(0);"class="btn bb text-white"
+							style="background-color: purple; width: 100%; text-decoration: none;">
+								Waiting to unlock
+						</a>
+					</div>
+					</div>
+					<div class="row bg-light content" id="vip5" style="width: 100%;">
+					<div class="col-4 text-center">
+						<img src="https://i.ibb.co/DC5YZ6z/machine.png" class="img-fluid" width="100px">
+					</div>
+					<div class="col-5 align-self-center">
+						<p style="color: red;"><%= Vip5.machine_name %></p>
+						<p>Machine Profits</p>
+					</div>
+					<div class="col-3 align-self-center">
+						<p style="color: red;">$<%= Vip5.machine_profit %></p>
+					</div>
+					<div class="col-xxl text-center mt-2">
+						<a href="javascript:void(0);"class="btn bb text-white"
+							style="background-color: purple; width: 100%; text-decoration: none;">
+								Waiting to unlock
+						</a>
+					</div>
+					</div>
+					<div class="row bg-light content" id="vip6" style="width: 100%;">
+					<div class="col-4 text-center">
+						<img src="https://i.ibb.co/DC5YZ6z/machine.png" class="img-fluid" width="100px">
+					</div>
+					<div class="col-5 align-self-center">
+						<p style="color: red;"><%= Vip6.machine_name %></p>
+						<p>Machine Profits</p>
+					</div>
+					<div class="col-3 align-self-center">
+						<p style="color: red;">$<%= Vip6.machine_profit %></p>
+					</div>
+					<div class="col-xxl text-center mt-2">
+						<a href="javascript:void(0);"class="btn bb text-white"
+							style="background-color: purple; width: 100%; text-decoration: none;">
+								Waiting to unlock
+						</a>
+					</div>
+					</div>
+				</article>
+			</article>
+
+		</div>
+	</section>
+
+	<section>
+		<div class="container mb-3">
+			<div class="row">
+				<div class="col-xxl">
+					<p><b>Money making strategy</b></p>
+				</div>
+
+				<div class="col-xxl bg-light">
+					<table class="table table-borderless" style="font-size: 15px;">
+						<tbody>
+  							<tr>
+      							<td width="50px">
+      								<img src="https://i.ibb.co/mC6nbCs/n1.png" class="img-fluid">
+      							</td>
+      							<td>
+      								<p>Register Cryptoinmi with your mobile number and buy VIP to get mining machine profit.</p>
+      							</td>
+      							<td width="50px">
+      								<img src="https://i.ibb.co/PhDW8Lq/list.png" class="img-fluid">
+      							</td>
+    						</tr>
+
+    						<tr>
+      							<td width="50px">
+      								<img src="https://i.ibb.co/VNbt34Z/number.png" class="img-fluid">
+      							</td>
+      							<td>
+      								<p>After the invitation is successful, you will receive 10% of first recharge done by your invitee. The more people you invite, the more generous the reward, and the income can be withdrawn at any time Let/s make money together</p>
+      							</td>
+      							<td width="50px">
+      								<img src="https://i.ibb.co/PFN6rhX/peoples.png" class="img-fluid">
+      							</td>
+    						</tr>
+
+    						<tr>
+      							<td width="50px">
+      								<img src="https://i.ibb.co/XShb7TS/n3.png" class="img-fluid">
+      							</td>
+      							<td>
+      								<p>Investment and financial management, regular investment, cash withdrawal at maturity.</p>
+      							</td>
+      							<td width="50px">
+      								<img src="https://i.ibb.co/tZydFhn/peoplewithmoney.png" class="img-fluid">
+      							</td>
+    						</tr>
+
+    						<tr>
+      							<td width="50px">
+      								<img src="https://i.ibb.co/4FDMJf4/n4.png" class="img-fluid">
+      							</td>
+      							<td>
+      								<p>Join the mining community group and learn how to investment betterly, how to build a team to profit.</p>
+      							</td>
+      							<td width="50px">
+      								<img src="https://i.ibb.co/LP0pGcC/message.png" class="img-fluid">
+      							</td>
+    						</tr>
+  						</tbody>
+  					</table>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="container mb-3">
+			<div class="row">
+				<div class="col-xxl">
+					<p><b>About Us</b></p>
+				</div>
+
+				<div class="col-xxl bg-light">
+					<p>The Cryptoinmi Company, or Cryptoinmi Bitcoin Mining Pool, is one of the largest Bitcoin mining pools focused on mining and investing in Bitcoin and cryptocurrencies. Cryptoinmi is an open access mining pool that supports ten cryptocurrencies including Bitcoin(BTC), Doge, Ethereum(ETH) and Litecoin(LTC). The mining pool monitors the computing power of user's miners in real time, supports multi-currency mining, and facilitates shared account management. Cryptoinmi accepts global investment to build mining pools and acquire cryptocurrencies such as Bitcoin. When we acquire cryptocurrency through mmining, we sell it on the exchange market and return it to our investors.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="container mb-3">
+			<div class="row">
+				<div class="col-xxl">
+					<p><b>Cryptoinmi</b></p>
+				</div>
+				
+				<div class="col-xxl text-center">
+					<img src="https://cash4.fun/images/cash4app/vip_levels/vip6.png" class="img-fluid" width="170px">
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="container" style="height: 30px;"></div>
+	</section>
+
+	<footer>
+		<div class="container-fluid">
+			<nav class="navbar fixed-bottom bg-light">
+					<div class="container-xxl mb-1">
+						<a class="nav-link active" aria-current="page" href="/user/home">
+							<img src="https://i.ibb.co/5h726fL/4.png" class="img-fluid" width="45px">
+						</a>
+						<a class="nav-link" href="/user/finance">
+							<img src="https://i.ibb.co/Pt063W9/financec.png" class="img-fluid" width="45px">
+						</a>
+						<a class="nav-link" href="/user/vip">
+							<img src="https://i.ibb.co/YWK3Vw6/vip.png" class="img-fluid" width="45px">
+						</a>
+						<a class="nav-link" href="/user/team">
+							<img src="https://i.ibb.co/Mf2gby4/team.png" class="img-fluid" width="45px">
+						</a>
+						<a class="nav-link"href="/user/account">
+							<img src="https://i.ibb.co/SNvqW7t/7.png" class="img-fluid" width="45px">
+						</a>
+					</div>
+				</nav>
+		</div>
+	</footer>
+
+	<script>
+		let staTus = '<%= st%>';
+		let cLevel = '<%= cl%>';
+		let today = '<%= today%>';
+		let date = '<%= date%>';
+	</script>
+	
+	<script>
+		const btns = globalThis.document.querySelectorAll(".tab-btn");
+		const about = globalThis.document.querySelector(".about");
+		const articles = globalThis.document.querySelectorAll(".content");
+
+		const bb = globalThis.document.querySelectorAll(".bb");
+		// console.log(bb);
+
+		about.addEventListener("click", (e) => {
+			const id = e.target.dataset.id;
+			if (id) {
+				btns.forEach(btn => {
+					btn.classList.remove('text-primary');
+					e.target.classList.add('text-primary');
+				})
+
+				articles.forEach(article => {
+					article.classList.remove('active');
+				})
+				const element = globalThis.document.getElementById(id);
+				element.classList.add('active');
+			}
+		})
+
+		btns.forEach(btn => {
+			let a = btn.dataset.id;
+			a = a.toUpperCase().replace(/\s/g,"");
+
+			Array.from(bb).forEach(b => {
+				let x = b;
+				let br = b.parentNode.parentNode.getAttribute('id');
+				br = br.toUpperCase().replace(/\s/g,"");
+				let c = cLevel.toUpperCase().replace(/\s/g,"");
+					
+				if(a == br && br == c && c == a) {
+					if(staTus == 'collected' && date == today) {
+						x.textContent = 'Come again Tomorrow';
+						x.style.backgroundColor = 'dimgray';
+						// console.log(x);
+					}
+					else x.textContent = 'Collect Reward';
+					return;
+				}
+				return;
+			})
+		})
+
+		Array.from(bb).forEach(btn => {
+			btn.addEventListener('click', (e) => {
+				// console.log(e.target);
+				let a = e.target.parentNode.parentNode.getAttribute("id")
+				let b = cLevel;
+				a = a.toUpperCase().replace(/\s/g,"");
+				b = b.toUpperCase().replace(/\s/g,"");
+				if(a.includes(b)) {
+					if (staTus == 'collected' && today == date) {
+						// console.log(e.target.parentNode.innerHTML);
+						e.target.parentNode.textContent = 'Come again Tomorrow';
+					}
+					else {
+						e.target.setAttribute('href', "/user/collectReward");
+						e.target.textContent = 'Collect Reward';
+					}
+					return;
+				}
+			})	
+		})
+	</script>
+
+<%- include('./includes/end.ejs') %>

@@ -1,0 +1,68 @@
+<%- include('./includes/head.ejs') %>
+
+  <body>
+
+    <div class="container-lg my-3">
+      <div class="row justify-content-center">
+        <div class="col-xxl text-center display-6">
+          <b>Login Form</b>
+        </div>
+
+        <div class="col-xxl text-center">
+          <img src="https://cash4.fun/images/cash4app/vip_levels/vip6.png" width="320px" class="img-fluid">
+        </div>
+
+        <div class="col-md-6">
+          <form action="/user/login" method="POST">
+
+            <div class="input-group mb-1">
+              <span class="input-group-text bg-transparent border-0">
+                <img src="https://i.ibb.co/nfKqgNY/user-icon.png" class="img-fluid" width="40px">
+              </span>
+              <input type="email" class="form-control border-0" name="email" placeholder="Email address" required>
+            </div>
+            <div id="emailHelp" class="form-text mb-2 text-start" style="margin-left: 20px;">We'll never share your email with anyone else.</div>
+
+            <div class="input-group mb-1">
+              <span class="input-group-text bg-transparent border-0">
+                <img src="https://i.ibb.co/NnVQdWh/password.png" class="img-fluid" width="40px">
+              </span>
+              <input type="password" class="form-control border-0" id="psword" name="psword" placeholder="Password">
+            </div>
+            <div id="passwordHelpBlock" class="form-text mb-2 text-start" style="margin-left: 20px;">
+              Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+            </div>
+
+            <div class="mb-1 text-end">
+              <a href="/user/forgetPsword" class="form-control border-0" style="color: purple; text-decoration: none;">Forget password</a>
+            </div>
+
+            <div class="d-grid">
+              <button type="submit" class="btn text-white mb-2" style="background-color: purple;">Sign In</button>
+            </div>
+
+            <div class="d-grid gap-2 text-center">
+              <a href="/user/register" class="form-control text-white mb-3" style="background-color: darkblue; text-decoration: none;">
+                Don't have a account, Sign up
+              </a>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+    <script>
+      let password = globalThis.document.getElementById('psword');
+      let feedback = globalThis.document.getElementById('passwordHelpBlock');
+
+      password.addEventListener('mouseover', (e) => {
+        if (e.target.value === '') {
+          feedback.textContent = 'Please enter your password';
+          feedback.classList.add('text-danger');
+        }
+      })
+    </script>
+
+<%- include('./includes/end.ejs') %>

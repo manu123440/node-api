@@ -1,0 +1,137 @@
+<%- include('./includes/head.ejs') %>
+
+<body>
+
+	<header class="header">
+		<div class="header-inner">
+			<div class="container-fluid">
+				<nav class="navbar bg-light fixed-top">
+				<div class="container-fluid mb-1 justify-content-center display-6">
+					<b>Team</b>
+				</div>
+			</nav>
+			</div>
+		</div>
+	</header>
+
+	<section>
+		<div class="container mb-3">
+			<div class="row" style="height: 220px; margin-top: 65px; border-radius: 10px;
+			background-image: linear-gradient(to right, #a17ce1, #2196f3); color: white; padding: 2px 0;">
+				<div class="col-xxl text-center mb-1">
+					<b>Rewards for Invite new people</b>
+				</div>
+				<div class="col-7" style="font-size: 13px;">
+					<p>After the invitation is successful, your friends will receive 10% of each charge. The more people you invite, the more generous the reward, and the income can be withdrawn at any time. Let's make money together.</p>
+				</div>
+				<div class="col-5">
+    				<img src="https://i.ibb.co/4tvgZ3N/mine-vector.png" height="150px" width="100px">
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="container bg-light mb-2 border">
+			<div class="row" style="font-size: 13px;">
+				<div class="col-4">
+					<img src="https://i.ibb.co/fH9DcnC/qr-code.jpg" class="img-fluid" width="20px">
+					<b><%= x.invitation_code %></b>
+				</div>
+				<div class="col-8 mb-3 text-end">
+					<img src="https://i.ibb.co/2FQ22dJ/2.png" class="img-fluid" width="20px">
+					<button type="button" class="btn border-0" value="<%= x.invitation_code %>" onclick="copyText()">Copy invitation code</button>
+				</div>
+				<div class="col-4 text-center">
+					<a href="<%= k4.whatsapp %>" target="_blank" style="text-decoration: none; color: black;">
+						<img src="https://i.ibb.co/KGbSQq0/n1.png" class="img-fluid" width="30px">
+						<p>Share with friends</p>
+					</a>
+				</div>
+				<div class="col-4 text-center">
+					<a href="/user/register" target="_blank" style="text-decoration: none; color: black;">
+						<img src="https://i.ibb.co/t42f13V/number.png" class="img-fluid" width="30px">
+						<p>New user Sign up</p>
+					</a>
+				</div>
+				<div class="col-4 text-center">
+					<a style="text-decoration: none; color: black;" target="_blank">
+						<img src="https://i.ibb.co/6tzTCCp/n3.png" class="img-fluid" width="30px">
+						<p>Get rewards</p>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="container mb-2 bg-light border">
+			<div class="row" style="font-size: 13px;">
+				<div class="col-xxl text-center mb-3" style="color: black;">
+					Choose way for share
+				</div>
+				<div class="col-3 text-center">
+					<a href="<%= k4.twitter %>" target="_blank" style="text-decoration: none; color: black;">
+						<img src="https://i.ibb.co/hDm4vzM/twitter.jpg" class="img-fluid" width="30px">
+						<p>Twitter</p>
+					</a>
+				</div>
+				<div class="col-3 text-center">
+					<a href="<%= k4.facebook %>" target="_blank" style="text-decoration: none; color: black;">
+						<img src="https://i.ibb.co/N90CWqj/facebook.jpg" class="img-fluid" width="30px">
+						<p>Facebook</p>
+					</a>
+				</div>
+				<div class="col-3 text-center">
+					<a href="https://telegram.me/share/url?url=cryptoinmi.click&text=Visit CryptoInMi to earn money" target="_blank" style="text-decoration: none; color: black;">
+						<img src="https://i.ibb.co/Zdd8Q24/telegram.jpg" class="img-fluid" width="30px">
+						<p>Telegram</p>
+					</a>
+				</div>
+				<div class="col-3 text-center">
+					<a href="<%= k4.whatsapp %>" target="_blank" style="text-decoration: none; color: black;">
+						<img src="https://i.ibb.co/THYPg3B/whatsapp.jpg" class="img-fluid" width="30px">
+						<p>Whatsapp</p>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="container" style="height: 70px;"></div>
+	</section>
+
+	<footer>
+		<div class="container-fluid">
+			<nav class="navbar fixed-bottom bg-light">
+					<div class="container-xxl mb-1">
+						<a class="nav-link active" aria-current="page" href="/user/home">
+							<img src="https://i.ibb.co/5h726fL/4.png" class="img-fluid" width="45px">
+						</a>
+						<a class="nav-link" href="/user/finance">
+							<img src="https://i.ibb.co/Pt063W9/financec.png" class="img-fluid" width="45px">
+						</a>
+						<a class="nav-link" href="/user/vip">
+							<img src="https://i.ibb.co/YWK3Vw6/vip.png" class="img-fluid" width="45px">
+						</a>
+						<a class="nav-link" href="/user/team">
+							<img src="https://i.ibb.co/Mf2gby4/team.png" class="img-fluid" width="45px">
+						</a>
+						<a class="nav-link"href="/user/account">
+							<img src="https://i.ibb.co/SNvqW7t/7.png" class="img-fluid" width="45px">
+						</a>
+					</div>
+				</nav>
+		</div>
+	</footer>
+
+	<script>
+		const btn = globalThis.document.querySelector('.btn');
+
+		function copyText() {
+			globalThis.navigator.clipboard.writeText(btn.value);
+		}
+	</script>
+
+<%- include('./includes/end.ejs') %>
